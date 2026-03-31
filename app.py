@@ -1,4 +1,7 @@
 from flask import Flask, request, render_template, send_file
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 app = Flask(__name__)
 
@@ -6,9 +9,86 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+def plot(series, column_index, title, color, filename):
+    counts = (series.iloc[:, column_index]
+                    .dropna()
+                    .clip(1, 5)
+                    .value_counts(normalize=True)
+                    .reindex([1, 2, 3, 4, 5], fill_value=0) * 100)
+
+    plt.figure(figsize=(8, 5))
+    ax = sns.barplot(x=counts.index, y=counts.values, color=color)
+    ax.set_xlabel('Score')
+    ax.set_title(title)
+    ax.set_ylim(0, 100)
+    ax.yaxis.set_visible(False)
+
+    for spine in ['top', 'right', 'left']:
+        ax.spines[spine].set_visible(False)
+    ax.spines['bottom'].set_visible(True)
+
+    for bar, pct in zip(ax.patches, counts.values):
+        if pct > 0:
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                pct + 1,
+                f'{pct:.0f}%',
+                ha='center',
+                va='bottom'
+            )
+
+    plt.box(False)
+
+    save_path = f"static/{filename}.png"
+    plt.savefig(save_path, dpi=150, bbox_inches='tight')
+    plt.close()
+
+    return save_path
+
 @app.route('/run', methods=['POST'])
 def run():
     year = request.form.get('year')
+    workbook = request.files.get('workbook')
+    try:
+        df = pd.read_excel(workbook, sheet_name='Raw Self Assessment')
+    except Exception as e:
+        print("Error reading Excel file:", e)
+        return "There was an error processing the uploaded file. Please ensure it's a valid Excel workbook (.xlsx) with the correct sheet name 'Raw Self Assessment'."
+
+    df = df[df['Timestamp'].dt.year == int(year)]
+    try:
+        df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    except Exception as e:
+        print("Error converting Timestamp to datetime:", e)
+        return "There was an error processing the 'Timestamp' column. Please ensure it contains valid date values."
+    
+    try:
+        social = df.iloc[:, 4:8]
+        auto = df.iloc[:, 8:11]
+        finance = df.iloc[:, 11:16]
+        trauma = df.iloc[:, 16:21]
+        engagement = df.iloc[:, 21:27]
+    except Exception as e:
+        print("Error slicing DataFrame columns:", e)
+        return "There was an error slicing the DataFrame. Please ensure the columns are structured as expected."
+    
+    teal = '#76b0af'
+    coral = '#f3623d'
+    yellow = '#f0d747'
+
+    
+    plot_paths = {
+        "connected": plot(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
+        "participation": plot(social, 2, 'Actively participating in group activities and discussions', yellow, "participation_plot"),
+        "finance": plot(finance, 1, 'Has secured or actively working towards securing employment', coral, "finance_plot"),
+        "schedule": plot(auto, 0, 'Creates and follows daily schedule to meet responsibilites', coral, "schedule_plot"),
+        "guidance": plot(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
+        "coping": plot(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
+        "progress": plot(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
+        "satisfaction": plot(engagement, 1, 'Feeling satisfied with program and staff', yellow, "satisfaction_plot")
+    }
+
+
     print("Received year:", year)
 
     # For now, return a simple response
