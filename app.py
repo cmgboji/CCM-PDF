@@ -96,12 +96,12 @@ def run():
         "support": plot(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot")
     }
 
-    stats = {s1: get_stats(social, 1), 
-             f1: get_stats(finance, 0), 
-             f2: get_stats(finance, 3), 
-             t1: get_stats(trauma, 0), 
-             t2: get_stats(trauma, 4), 
-             e1: get_stats(engagement, 5)}
+    stats = {'s1': get_stats(social, 1), 
+             'f1': get_stats(finance, 0), 
+             'f2': get_stats(finance, 3), 
+             't1': get_stats(trauma, 0), 
+             't2': get_stats(trauma, 4), 
+             'e1': get_stats(engagement, 5)}
 
     html = render_template(
         "report_template.html",
@@ -122,10 +122,11 @@ def run():
         e1=stats["e1"],
     )
 
-    print("Received year:", year)
+    
+    pdf_path = f"static/{year} Impact Report.pdf"
+    HTML(string=html).write_pdf(pdf_path)
+    return send_file(pdf_path, as_attachment=True)
 
-    # For now, return a simple response
-    return f"PDF for the year {year} generated successfully!"
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -20,6 +20,16 @@ body {
     left: 0;
 }
 
+@font-face {
+    font-family: 'League Spartan';
+    src: url('static/fonts/LeagueSpartan-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('static/fonts/Montserrat-Regular.ttf');
+}
+
 /* ==================== PAGE 1 YEAR ==================== */
 .year-title {
     position: absolute;
