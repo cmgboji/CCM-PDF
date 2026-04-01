@@ -45,6 +45,9 @@ def plot(series, column_index, title, color, filename):
 
     return save_path
 
+def get_stats(df, col):
+    return int(round(df.iloc[:,col][df.iloc[:,col] > 3].count()/df.iloc[:,col].dropna().count(), 2) * 100)
+
 @app.route('/run', methods=['POST'])
 def run():
     year = request.form.get('year')
@@ -85,8 +88,15 @@ def run():
         "guidance": plot(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
         "coping": plot(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
         "progress": plot(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
-        "satisfaction": plot(engagement, 1, 'Feeling satisfied with program and staff', yellow, "satisfaction_plot")
+        "support": plot(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot")
     }
+
+    stats = {s1: get_stats(social, 1), 
+             f1: get_stats(finance, 0), 
+             f2: get_stats(finance, 3), 
+             t1: get_stats(trauma, 0), 
+             t2: get_stats(trauma, 4), 
+             e1: get_stats(engagement, 5)}
 
 
     print("Received year:", year)

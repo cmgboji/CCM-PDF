@@ -1,6 +1,6 @@
 flask
 pandas
-matplotlib.pyplot
+matplotlib
 seaborn
 gunicorn
 reportlab
