@@ -48,6 +48,10 @@ def plot(series, column_index, title, color, filename):
 def get_stats(df, col):
     return int(round(df.iloc[:,col][df.iloc[:,col] > 3].count()/df.iloc[:,col].dropna().count(), 2) * 100)
 
+def output_pdf(plot_paths, stats):
+    # Placeholder for PDF generation logic
+    pass
+
 @app.route('/run', methods=['POST'])
 def run():
     year = request.form.get('year')
