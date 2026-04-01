@@ -58,7 +58,7 @@ def run():
     year = request.form.get('year')
     workbook = request.files.get('workbook')
     try:
-        df = pd.read_excel(workbook, sheet_name='Raw Self Assessment')
+        df = pd.read_excel(workbook, sheet_name='Raw Self Assessment', engine='openpyxl')
     except Exception as e:
         print("Error reading Excel file:", e)
         return "There was an error processing the uploaded file. Please ensure it's a valid Excel workbook (.xlsx) with the correct sheet name 'Raw Self Assessment'."
