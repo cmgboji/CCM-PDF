@@ -3,5 +3,6 @@ pandas
 matplotlib
 weasyprint
 seaborn
+openpyxl
 gunicorn
 reportlab
