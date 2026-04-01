@@ -61,13 +61,13 @@ def run():
         df = pd.read_excel(workbook, sheet_name='Raw Self Assessment')
     except Exception as e:
         print("Error reading Excel file:", e)
-        return "There was an error processing the uploaded file. Please ensure it's a valid Excel workbook (.xlsx) with the correct sheet name 'Raw Self Assessment'."
+        return e, "There was an error processing the uploaded file. Please ensure it's a valid Excel workbook (.xlsx) with the correct sheet name 'Raw Self Assessment'."
 
     try:
         df = df[df['Timestamp'].dt.year == int(year)]
     except Exception as e:
         print("Error converting Timestamp to datetime:", e)
-        return "There was an error processing the 'Timestamp' column. Please ensure it contains valid date values."
+        return e, "There was an error processing the 'Timestamp' column. Please ensure it contains valid date values."
     
     try:
         social = df.iloc[:, 4:8]
@@ -77,7 +77,7 @@ def run():
         engagement = df.iloc[:, 21:27]
     except Exception as e:
         print("Error slicing DataFrame columns:", e)
-        return "There was an error slicing the DataFrame. Please ensure the columns are structured as expected."
+        return e, "There was an error slicing the DataFrame. Please ensure the columns are structured as expected."
     
     teal = '#76b0af'
     coral = '#f3623d'
