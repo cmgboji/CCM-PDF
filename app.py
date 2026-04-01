@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, send_file
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from weasyprint import HTML
 
 app = Flask(__name__)
 
@@ -102,6 +103,24 @@ def run():
              t2: get_stats(trauma, 4), 
              e1: get_stats(engagement, 5)}
 
+    html = render_template(
+        "report_template.html",
+        year=year,
+        connected=plot_paths["connected"],
+        participation=plot_paths["participation"],
+        finance=plot_paths["finance"],
+        schedule=plot_paths["schedule"],
+        guidance=plot_paths["guidance"],
+        coping=plot_paths["coping"],
+        progress=plot_paths["progress"],
+        support=plot_paths["support"],
+        s1=stats["s1"],
+        f1=stats["f1"],
+        f2=stats["f2"],
+        t1=stats["t1"],
+        t2=stats["t2"],
+        e1=stats["e1"],
+    )
 
     print("Received year:", year)
 

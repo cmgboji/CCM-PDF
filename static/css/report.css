@@ -1,0 +1,150 @@
+/* ==================== PAGE LAYOUT ==================== */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    position: relative;
+    width: 816px;     /* 8.5 x 11 at 96 dpi */
+    height: 1056px;
+    page-break-after: always;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; 
+    left: 0;
+}
+
+/* ==================== PAGE 1 YEAR ==================== */
+.year-title {
+    position: absolute;
+    top: 330px;
+    width: 100%;
+    text-align: center;
+    font-family: 'League Spartan';
+    font-size: 36pt;
+    color: #76b0af;
+}
+
+
+/* ==================== GENERIC PLOT POSITIONING ==================== */
+
+.plot {
+    position: absolute;
+    width: 300px;
+}
+
+.plot-left {
+    left: 100px;
+    top: 300px;
+}
+
+.plot-right {
+    left: 430px;
+    top: 300px;
+}
+
+
+/* ==================== CIRCLES ==================== */
+
+.circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    font-family: 'League Spartan';
+    font-size: 42pt;
+    text-align: center;
+    line-height: 180px;
+}
+
+.yellow-circle {
+    background: #f0d747;
+    color: #fbefab;
+    left: 130px;
+    top: 140px;
+}
+
+
+/* ==================== RECTANGLES ==================== */
+
+.rect-pink {
+    position: absolute;
+    width: 180px;
+    height: 110px;
+    background: #f5b4a4;
+    border-radius: 15px;
+    font-family: 'League Spartan';
+    font-size: 36pt;
+    color: white;
+    text-align: center;
+    line-height: 110px;
+}
+
+.rect-blue {
+    position: absolute;
+    width: 180px;
+    height: 110px;
+    background: #cedbdb;
+    border-radius: 15px;
+    font-family: 'League Spartan';
+    font-size: 36pt;
+    color: white;
+    text-align: center;
+    line-height: 110px;
+}
+
+.rect1 { top: 150px; left: 120px; }
+.rect2 { top: 390px; left: 120px; }
+
+
+/* ==================== CAPTIONS ==================== */
+
+.caption {
+    position: absolute;
+    font-family: 'Montserrat';
+    font-size: 16pt;
+    width: 500px;
+}
+
+.yellow-caption {
+    color: #f0d747;
+    top: 350px;
+    left: 100px;
+}
+
+.rect-caption {
+    position: absolute;
+    font-family: 'Montserrat';
+    font-size: 14pt;
+    width: 350px;
+}
+
+.rect-caption-pink {
+    color: #f3623d;
+    top: 150px;
+    left: 340px;
+}
+
+.rect-caption-pink2 {
+    color: #f3623d;
+    top: 390px;
+    left: 340px;
+}
+
+.rect-caption-blue {
+    color: #76b0af;
+    top: 150px;
+    left: 340px;
+}
+
+.rect-caption-blue2 {
+    color: #76b0af;
+    top: 390px;
+    left: 340px;
+}

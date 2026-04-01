@@ -1,6 +1,7 @@
 flask
 pandas
 matplotlib
+weasyprint
 seaborn
 gunicorn
 reportlab
