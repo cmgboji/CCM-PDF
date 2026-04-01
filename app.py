@@ -61,7 +61,7 @@ def run():
         df = pd.read_excel(workbook, sheet_name='Raw Self Assessment')
     except Exception as e:
         print("Error reading Excel file:", e)
-        return e, "There was an error processing the uploaded file. Please ensure it's a valid Excel workbook (.xlsx) with the correct sheet name 'Raw Self Assessment'."
+        return "There was an error processing the uploaded file. Please ensure it's a valid Excel workbook (.xlsx) with the correct sheet name 'Raw Self Assessment'.", e
 
     try:
         df = df[df['Timestamp'].dt.year == int(year)]
