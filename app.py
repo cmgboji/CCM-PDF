@@ -53,7 +53,7 @@ def output_pdf(plot_paths, stats):
     # Placeholder for PDF generation logic
     pass
 
-@app.route('/run', methods=['POST'], enctype="multipart/form-data")
+@app.route('/run', methods=['POST'])
 def run():
     year = request.form.get('year')
     workbook = request.files.get('workbook')
