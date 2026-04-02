@@ -7,8 +7,8 @@ body {
 
 .page {
     position: relative;
-    width: 1545px;     /* 8.5 x 11 at 96 dpi */
-    height: 2000px;
+    width: 816px;     /* 8.5 x 11 at 96 dpi */
+    height: 1056px;
     page-break-after: always;
 }
 
@@ -16,11 +16,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-
-    width: 1545px;
-    height: 2000px;
-
-    z-index: 0;
+    width: 816px;
+    height: 1056px;
+    z-index: -1;
 }
 
 
