@@ -23,7 +23,7 @@ body {
     object-fit: cover;          
     object-position: center;   
 
-    z-index: 0;                
+    z-index: 0;               
 }
 
 
@@ -77,30 +77,11 @@ body {
     width: 500px;
 }
 
-.stat-social {
-    top: 330px; 
-    left: 515px; 
-
-    font-family: 'League Spartan';
-    font-size: 46pt;
-    color: #fbefab;
-
-    text-align: center;
-    width: 160px; 
-}
-
-
-.caption-social {
-    top: 510px;
-    left: 120px;
-    width: 420px;
-
-    font-family: 'Montserrat';
-    font-size: 15pt;
-    line-height: 1.35;
+.yellow-caption {
     color: #f0d747;
+    top: 350px;
+    left: 100px;
 }
-
 
 .rect-caption {
     position: absolute;
