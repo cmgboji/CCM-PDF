@@ -23,12 +23,12 @@ body {
 
 @font-face {
     font-family: 'League Spartan';
-    src: url('../fonts/LeagueSpartan-Regular.ttf') format('truetype');
+    src: url('{{ base_url }}static/fonts/LeagueSpartan-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    src: url('{{ base_url }}static/fonts/Montserrat-Regular.ttf') format('truetype');
 }
 
 

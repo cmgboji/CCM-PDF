@@ -13,7 +13,7 @@ def index():
 def plot(series, column_index, title, color, filename):
     import os
     os.makedirs("static/plots", exist_ok=True)
-    
+
     counts = (series.iloc[:, column_index]
                     .dropna()
                     .clip(1, 5)
@@ -120,6 +120,7 @@ def run():
     try:
         html = render_template(
             "report_template.html",
+            base_url=request.host_url,
             year=year,
             connected=plot_paths["connected"],
             participation=plot_paths["participation"],
@@ -139,7 +140,7 @@ def run():
 
         
         pdf_path = f"static/{year} Impact Report.pdf"
-        HTML(string=html).write_pdf(pdf_path)
+        HTML(string=html, base_url=request.host_url).write_pdf(pdf_path)
         return send_file(pdf_path, as_attachment=True)
     
     except Exception as e:

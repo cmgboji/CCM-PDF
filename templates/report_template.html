@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
+    <link rel="stylesheet" href="{{ base_url }}static/css/report.css">
 </head>
 
 <body>
 
 <!-- ===================== PAGE 1 ===================== -->
 <div class="page">
-    <img class="bg" src="{{ url_for('static', filename='backgrounds/1.png') }}">
+    <img class="bg" src="{{ base_url }}static/backgrounds/1.png">
 
     <!-- YEAR ABOVE IMPACT REPORT -->
     <div class="year-title">{{ year }}</div>
@@ -18,31 +18,31 @@
 
 <!-- ===================== PAGE 2 ===================== -->
 <div class="page">
-    <img class="bg" src="{{ url_for('static', filename='backgrounds/2.png') }}">
+    <img class="bg" src="{{ base_url }}static/backgrounds/2.png">
 </div>
 
 
 <!-- ===================== PAGE 3 ===================== -->
 <div class="page">
-    <img class="bg" src="{{ url_for('static', filename='backgrounds/3.png') }}">
+    <img class="bg" src="{{ base_url }}static/backgrounds/3.png">
 </div>
 
 
 <!-- ===================== PAGE 4 ===================== -->
 <div class="page">
-    <img class="bg" src="{{ url_for('static', filename='backgrounds/4.png') }}">
+    <img class="bg" src="{{ base_url }}static/backgrounds/4.png">
 </div>
 
 
 <!-- ===================== PAGE 5 ===================== -->
 <div class="page">
-    <img class="bg" src="{{ url_for('static', filename='backgrounds/5.png') }}">
+    <img class="bg" src="{{ base_url }}static/backgrounds/5.png">
 </div>
 
 
 <!-- ===================== PAGE 6 — SOCIAL / RELATIONSHIPS ===================== -->
 <div class="page">
-    <img class="bg" src="{{ url_for('static', filename='backgrounds/6.png') }}">
+    <img class="bg" src="{{ base_url }}static/backgrounds/6.png">
 
     <!-- CONNECTED PLOT -->
     <img class="plot plot-left" src="{{ connected }}">
@@ -65,7 +65,7 @@
 
 <!-- ===================== PAGE 7 — FINANCIAL ===================== -->
 <div class="page">
-    <img class="bg" src="{{ url_for('static', filename='backgrounds/7.png') }}">
+    <img class="bg" src="{{ base_url }}static/backgrounds/7.png">
 
     <img class="plot plot-left" src="{{ finance }}">
     <img class="plot plot-right" src="{{ schedule }}">
@@ -85,7 +85,7 @@
 
 <!-- ===================== PAGE 8 — TRAUMA / HEALING ===================== -->
 <div class="page">
-    <img class="bg" src="{{ url_for('static', filename='backgrounds/8.png') }}">
+    <img class="bg" src="{{ base_url }}static/backgrounds/8.png">
 
     <img class="plot plot-left" src="{{ guidance }}">
     <img class="plot plot-right" src="{{ coping }}">
@@ -104,7 +104,7 @@
 
 <!-- ===================== PAGE 9 — PROGRESS & SUPPORT ===================== -->
 <div class="page">
-    <img class="bg" src="{{ url_for('static', filename='backgrounds/9.png') }}">
+    <img class="bg" src="{{ base_url }}static/backgrounds/9.png">
 
     <img class="plot plot-left" src="{{ progress }}">
     <img class="plot plot-right" src="{{ support }}">
@@ -119,9 +119,9 @@
 
 
 <!-- ===================== PAGES 10–12 AS STATIC PAGES ===================== -->
-<div class="page"><img class="bg" src="{{ url_for('static', filename='backgrounds/10.png') }}"></div>
-<div class="page"><img class="bg" src="{{ url_for('static', filename='backgrounds/11.png') }}"></div>
-<div class="page"><img class="bg" src="{{ url_for('static', filename='backgrounds/12.png') }}"></div>
+<div class="page"><img class="bg" src="{{ base_url }}static/backgrounds/10.png"></div>
+<div class="page"><img class="bg" src="{{ base_url }}static/backgrounds/11.png"></div>
+<div class="page"><img class="bg" src="{{ base_url }}static/backgrounds/12.png"></div>
 
 </body>
 </html>
