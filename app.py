@@ -86,48 +86,62 @@ def run():
     coral = '#f3623d'
     yellow = '#f0d747'
 
+    try:
+        plot_paths = {
+            "connected": plot(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
+            "participation": plot(social, 2, 'Actively participating in group activities and discussions', yellow, "participation_plot"),
+            "finance": plot(finance, 1, 'Has secured or actively working towards securing employment', coral, "finance_plot"),
+            "schedule": plot(auto, 0, 'Creates and follows daily schedule to meet responsibilites', coral, "schedule_plot"),
+            "guidance": plot(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
+            "coping": plot(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
+            "progress": plot(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
+            "support": plot(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot")
+        }
     
-    plot_paths = {
-        "connected": plot(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
-        "participation": plot(social, 2, 'Actively participating in group activities and discussions', yellow, "participation_plot"),
-        "finance": plot(finance, 1, 'Has secured or actively working towards securing employment', coral, "finance_plot"),
-        "schedule": plot(auto, 0, 'Creates and follows daily schedule to meet responsibilites', coral, "schedule_plot"),
-        "guidance": plot(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
-        "coping": plot(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
-        "progress": plot(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
-        "support": plot(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot")
-    }
+    except Exception as e:
+        print("Error generating plots:", e)
+        return "There was an error generating the plots. Please ensure the data is structured correctly and try again."
 
-    stats = {'s1': get_stats(social, 1), 
-             'f1': get_stats(finance, 0), 
-             'f2': get_stats(finance, 3), 
-             't1': get_stats(trauma, 0), 
-             't2': get_stats(trauma, 4), 
-             'e1': get_stats(engagement, 5)}
+    try:
+        stats = {'s1': get_stats(social, 1), 
+                'f1': get_stats(finance, 0), 
+                'f2': get_stats(finance, 3), 
+                't1': get_stats(trauma, 0), 
+                't2': get_stats(trauma, 4), 
+                'e1': get_stats(engagement, 5)}
+        
+    except Exception as e:
+        print("Error calculating statistics:", e)
+        return "There was an error calculating the statistics. Please ensure the data is structured correctly and try again."
 
-    html = render_template(
-        "report_template.html",
-        year=year,
-        connected=plot_paths["connected"],
-        participation=plot_paths["participation"],
-        finance=plot_paths["finance"],
-        schedule=plot_paths["schedule"],
-        guidance=plot_paths["guidance"],
-        coping=plot_paths["coping"],
-        progress=plot_paths["progress"],
-        support=plot_paths["support"],
-        s1=stats["s1"],
-        f1=stats["f1"],
-        f2=stats["f2"],
-        t1=stats["t1"],
-        t2=stats["t2"],
-        e1=stats["e1"],
-    )
+    try:
+        html = render_template(
+            "report_template.html",
+            year=year,
+            connected=plot_paths["connected"],
+            participation=plot_paths["participation"],
+            finance=plot_paths["finance"],
+            schedule=plot_paths["schedule"],
+            guidance=plot_paths["guidance"],
+            coping=plot_paths["coping"],
+            progress=plot_paths["progress"],
+            support=plot_paths["support"],
+            s1=stats["s1"],
+            f1=stats["f1"],
+            f2=stats["f2"],
+            t1=stats["t1"],
+            t2=stats["t2"],
+            e1=stats["e1"],
+        )
 
+        
+        pdf_path = f"static/{year} Impact Report.pdf"
+        HTML(string=html).write_pdf(pdf_path)
+        return send_file(pdf_path, as_attachment=True)
     
-    pdf_path = f"static/{year} Impact Report.pdf"
-    HTML(string=html).write_pdf(pdf_path)
-    return send_file(pdf_path, as_attachment=True)
+    except Exception as e:
+        print("Error generating PDF:", e)
+        return "There was an error generating the PDF. Please ensure the template is structured correctly and try again."
 
 
 if __name__ == "__main__":
