@@ -5,91 +5,11 @@ body {
     padding: 0;
 }
 
-
-@page {
-    size: 816px 1056px;
-    margin: 0;
-}
-
 .page {
+    position: relative;
+    width: 1545px;     /* 8.5 x 11 at 96 dpi */
+    height: 2000px;
     page-break-after: always;
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-
-    -weasy-print-color-adjust: exact;
-    print-color-adjust: exact;
-}
-
-.page-1 {
-    background-image: url('static/backgrounds/1.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-2 {
-    background-image: url('static/backgrounds/2.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-3 {
-    background-image: url('static/backgrounds/3.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-4 {
-    background-image: url('static/backgrounds/4.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-5 {
-    background-image: url('static/backgrounds/5.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-6 {
-    background-image: url('static/backgrounds/6.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-7 {
-    background-image: url('static/backgrounds/7.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-8 {
-    background-image: url('static/backgrounds/8.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-9 {
-    background-image: url('static/backgrounds/9.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-10 {
-    background-image: url('static/backgrounds/10.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-11 {
-    background-image: url('static/backgrounds/11.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
-}
-
-.page-12 {
-    background-image: url('static/backgrounds/12.jpg');
-    background-size: 816px 1056px;
-    background-repeat: no-repeat;
 }
 
 .bg {
@@ -97,8 +17,8 @@ body {
     top: 0;
     left: 0;
 
-    width: 816px;
-    height: 1056px;
+    width: 1545px;
+    height: 2000px;
 
     z-index: 0;
 }
