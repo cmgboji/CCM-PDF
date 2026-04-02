@@ -5,11 +5,19 @@ body {
     padding: 0;
 }
 
+
+@page {
+    size: 816px 1056px;
+    margin: 0;
+}
+
 .page {
-    position: relative;
-    width: 816px;     /* 8.5 x 11 at 96 dpi */
-    height: 1056px;
     page-break-after: always;
+    background-size: 816px 1056px;
+    background-repeat: no-repeat;
+
+    -weasy-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
 .page-1 {

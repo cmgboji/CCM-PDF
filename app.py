@@ -140,7 +140,11 @@ def run():
         
         pdf_path = f"static/{year} Impact Report.pdf"
         base_dir = os.path.abspath(os.path.dirname(__file__))
-        HTML(string=html, base_url=base_dir).write_pdf(pdf_path)
+        HTML(string=html, base_url=base_dir).write_pdf(
+            pdf_path,
+            stylesheets=None,
+            presentational_hints=True
+        )
         return send_file(pdf_path, as_attachment=True)
     
     except Exception as e:
