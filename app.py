@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from weasyprint import HTML
+import os
 
 app = Flask(__name__)
 
@@ -11,9 +12,7 @@ def index():
     return render_template("index.html")
 
 def plot(series, column_index, title, color, filename):
-    import os
     os.makedirs("static/plots", exist_ok=True)
-
     counts = (series.iloc[:, column_index]
                     .dropna()
                     .clip(1, 5)
@@ -140,7 +139,8 @@ def run():
 
         
         pdf_path = f"static/{year} Impact Report.pdf"
-        HTML(string=html, base_url=request.host_url).write_pdf(pdf_path)
+        base_dir = os.path.abspath(os.path.dirname(__file__))
+        HTML(string=html, base_url=base_dir).write_pdf(pdf_path)
         return send_file(pdf_path, as_attachment=True)
     
     except Exception as e:
