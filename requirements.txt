@@ -2,7 +2,6 @@ flask
 pandas
 matplotlib
 weasyprint
-os
 seaborn
 openpyxl
 gunicorn
