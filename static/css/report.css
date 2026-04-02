@@ -5,7 +5,6 @@ body {
     padding: 0;
 }
 
-
 @page {
     size: letter;    /* 8.5in x 11in */
     margin: 0;
@@ -13,23 +12,19 @@ body {
 
 .page {
     position: relative;
-    width: 100%;     /* 8.5 x 11 at 96 dpi */
-    height: 100%;
+    width: 816px;     /* 8.5 x 11 at 96 dpi */
+    height: 1056px;
     page-break-after: always;
 }
-
 
 .bg {
     position: absolute;
     top: 0;
     left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain; 
+    width: 816px;
+    height: 1056px;
+    z-index: -1;
 }
-
 
 
 @font-face {
