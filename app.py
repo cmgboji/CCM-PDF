@@ -42,8 +42,8 @@ def plot(series, column_index, title, color, filename):
 
     plt.box(False)
 
-    save_path = f"static/plots/{filename}.png"
-    plt.savefig(save_path, dpi=150, bbox_inches='tight')
+    save_path = f"static/plots/{filename}.jpg"
+    plt.savefig(save_path, dpi=100, bbox_inches='tight')
     plt.close()
 
     return save_path
