@@ -11,6 +11,9 @@ def index():
     return render_template("index.html")
 
 def plot(series, column_index, title, color, filename):
+    import os
+    os.makedirs("static/plots", exist_ok=True)
+    
     counts = (series.iloc[:, column_index]
                     .dropna()
                     .clip(1, 5)
