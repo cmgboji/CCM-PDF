@@ -62,59 +62,6 @@ body {
 }
 
 
-/* ==================== CIRCLES ==================== */
-
-.circle {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    font-family: 'League Spartan';
-    font-size: 42pt;
-    text-align: center;
-    line-height: 180px;
-}
-
-.yellow-circle {
-    background: #f0d747;
-    color: #fbefab;
-    left: 130px;
-    top: 140px;
-}
-
-
-/* ==================== RECTANGLES ==================== */
-
-.rect-pink {
-    position: absolute;
-    width: 180px;
-    height: 110px;
-    background: #f5b4a4;
-    border-radius: 15px;
-    font-family: 'League Spartan';
-    font-size: 36pt;
-    color: white;
-    text-align: center;
-    line-height: 110px;
-}
-
-.rect-blue {
-    position: absolute;
-    width: 180px;
-    height: 110px;
-    background: #cedbdb;
-    border-radius: 15px;
-    font-family: 'League Spartan';
-    font-size: 36pt;
-    color: white;
-    text-align: center;
-    line-height: 110px;
-}
-
-.rect1 { top: 150px; left: 120px; }
-.rect2 { top: 390px; left: 120px; }
-
-
 /* ==================== CAPTIONS ==================== */
 
 .caption {
