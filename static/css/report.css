@@ -41,11 +41,12 @@ body {
 /* ==================== PAGE 1 YEAR ==================== */
 .year-title {
     position: absolute;
-    top: 700px;
+    top: 800px;
     width: 100%;
     text-align: center;
     font-family: 'League Spartan';
     font-size: 36pt;
+    font-weight: 700;
     color: #76b0af;
 }
 
@@ -76,16 +77,16 @@ body {
 .stat-social {
     position: absolute;
 
-    top: 400px;     
+    top: 500px;     
     left: 550px;   
 
-    width: 160px;   /* ≈ circle width */
+    width: 160px;
     text-align: center;
 
     font-family: 'League Spartan';
     font-size: 60pt;
     font-weight: 700;
-    color: #fbefab;      /* light yellow text */
+    color: #fbefab;
 
     z-index: 10;
 }
@@ -94,12 +95,12 @@ body {
 .caption-social {
     position: absolute;
 
-    top: 700px;
+    top: 650px;
     left: 500px;
     width: 430px;
 
     font-family: 'Montserrat';
-    font-size: 30pt;
+    font-size: 20pt;
     line-height: 1.35;
     color: #f0d747;
 
@@ -111,12 +112,12 @@ body {
     position: absolute;
     top: 300px;
     left: 120px;
-    width: 260px;
+    width: 400px;
 }
 
 .plot-social-right {
     position: absolute;
-    top: 900px;
+    top: 700px;
     left: 120px;
     width: 260px;
 }
@@ -125,7 +126,7 @@ body {
 
 .stat-finance-1 {
     position: absolute;
-    top: 300px;
+    top: 350px;
     left: 530px;
     width: 150px;
 
@@ -139,7 +140,7 @@ body {
 .stat-finance-2 {
     position: absolute;
     top: 700px;
-    left: 215px;
+    left: 120px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -151,9 +152,9 @@ body {
 
 .caption-finance-1 {
     position: absolute;
-    top: 500px;
+    top: 490px;
     left: 425px;
-    width: 350px;
+    width: 325px;
 
     font-family: 'Montserrat';
     font-size: 14pt;
@@ -162,13 +163,27 @@ body {
 
 .caption-finance-2 {
     position: absolute;
-    top: 800px;
+    top: 900px;
     left: 60px;
-    width: 350px;
+    width: 325px;
 
     font-family: 'Montserrat';
     font-size: 14pt;
     color: #f3623d;
+}
+
+.plot-finance-left {
+    position: absolute;
+    top: 300px;
+    left: 120px;
+    width: 400px;
+}
+
+.plot-finance-right {
+    position: absolute;
+    top: 700px;
+    left: 530px;
+    width: 260px;
 }
 
 /* ================= PAGE 8 ================= */
