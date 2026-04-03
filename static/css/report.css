@@ -41,7 +41,7 @@ body {
 /* ==================== PAGE 1 YEAR ==================== */
 .year-title {
     position: absolute;
-    top: 330px;
+    top: 630px;
     width: 100%;
     text-align: center;
     font-family: 'League Spartan';
@@ -70,46 +70,168 @@ body {
 
 /* ==================== CAPTIONS ==================== */
 
-.caption {
+/* ================= PAGE 6 ================= */
+
+/* Big % over dark yellow circle */
+.stat-social {
     position: absolute;
-    font-family: 'Montserrat';
-    font-size: 16pt;
-    width: 500px;
+
+    top: 305px;     /* adjust until centered in circle */
+    left: 505px;    /* horizontal center of circle */
+
+    width: 160px;   /* ≈ circle width */
+    text-align: center;
+
+    font-family: 'League Spartan';
+    font-size: 48pt;     /* BIG */
+    font-weight: 700;
+    color: #fbefab;      /* light yellow text */
+
+    z-index: 10;
 }
 
-.yellow-caption {
+/* Caption inside light yellow block */
+.caption-social {
+    position: absolute;
+
+    top: 510px;
+    left: 120px;
+    width: 430px;
+
+    font-family: 'Montserrat';
+    font-size: 15pt;
+    line-height: 1.35;
     color: #f0d747;
-    top: 350px;
-    left: 100px;
+
+    z-index: 10;
 }
 
-.rect-caption {
+/* Plots inside large light blocks */
+.plot-social-left {
     position: absolute;
-    font-family: 'Montserrat';
-    font-size: 14pt;
-    width: 350px;
+    top: 260px;
+    left: 140px;
+    width: 260px;
 }
 
-.rect-caption-pink {
-    color: #f3623d;
-    top: 150px;
-    left: 340px;
-}
-
-.rect-caption-pink2 {
-    color: #f3623d;
-    top: 390px;
-    left: 340px;
-}
-
-.rect-caption-blue {
-    color: #76b0af;
-    top: 150px;
-    left: 340px;
+.plot-social-right {
+    position: absolute;
+    top: 260px;
+    left: 460px;
+    width: 260px;
 }
 
 .rect-caption-blue2 {
     color: #76b0af;
     top: 390px;
     left: 340px;
+}
+
+/* ================= PAGE 7 ================= */
+
+.stat-finance-1 {
+    position: absolute;
+    top: 285px;
+    left: 515px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 42pt;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+}
+
+.stat-finance-2 {
+    position: absolute;
+    top: 565px;
+    left: 215px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 42pt;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+}
+
+.caption-finance-1 {
+    position: absolute;
+    top: 410px;
+    left: 380px;
+    width: 350px;
+
+    font-family: 'Montserrat';
+    font-size: 14pt;
+    color: #f3623d;
+}
+
+.caption-finance-2 {
+    position: absolute;
+    top: 690px;
+    left: 120px;
+    width: 350px;
+
+    font-family: 'Montserrat';
+    font-size: 14pt;
+    color: #f3623d;
+}
+
+/* ================= PAGE 8 ================= */
+
+.stat-therapy-1 {
+    position: absolute;
+    top: 285px;
+    left: 515px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 42pt;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+}
+
+.stat-therapy-2 {
+    position: absolute;
+    top: 565px;
+    left: 215px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 42pt;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+}
+
+.caption-therapy {
+    font-family: 'Montserrat';
+    font-size: 14pt;
+    color: #76b0af;
+}
+
+/* ================= PAGE 9 ================= */
+.stat-support {
+    position: absolute;
+    top: 285px;
+    left: 515px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 42pt;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+}
+
+.caption-support {
+    position: absolute;
+    top: 410px;
+    left: 380px;
+    width: 350px;
+
+    font-family: 'Montserrat';
+    font-size: 14pt;
+    color: #f3623d;
 }

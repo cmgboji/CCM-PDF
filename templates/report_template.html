@@ -44,43 +44,39 @@
 <div class="page">
     <img class="bg" src="static/backgrounds/6.jpg">
 
-    <!-- CONNECTED PLOT -->
-    <img class="plot plot-left" src="{{ connected }}">
+    
+    <img class="plot plot-social-left" src="{{ connected }}">
+    <img class="plot plot-social-right" src="{{ participation }}">
 
-    <!-- PARTICIPATION PLOT -->
-    <img class="plot plot-right" src="{{ participation }}">
+    <div class="stat stat-social">{{ s1 }}%</div>
 
-    <!-- CIRCLE PERCENT -->
-    <div class="circle yellow-circle">
-        {{ s1}}% 
-    </div>
-
-    <!-- CAPTION -->
-    <div class="caption yellow-caption">
-        of program residents report to have built meaningful relationships 
+    <div class="caption caption-social">
+        of program residents report to have built meaningful relationships
         with other residents and/or volunteers
     </div>
 </div>
+
 
 
 <!-- ===================== PAGE 7 — FINANCIAL ===================== -->
 <div class="page">
     <img class="bg" src="static/backgrounds/7.jpg">
 
-    <img class="plot plot-left" src="{{ finance }}">
-    <img class="plot plot-right" src="{{ schedule }}">
+    
+    <img class="plot plot-finance-left" src="{{ finance }}">
+    <img class="plot plot-finance-right" src="{{ schedule }}">
 
-    <div class="rect-pink rect1">{{ f1}}%</div>
-    <div class="rect-caption rect-caption-pink">
+    <div class="stat stat-finance-1">{{ f1 }}%</div>
+    <div class="caption caption-finance-1">
         of program residents have expressed confidence in managing their personal finances.
     </div>
 
-    <div class="rect-pink rect2">{{ f2}}%</div>
-    <div class="rect-caption rect-caption-pink2">
-        of residents have stated that if they are not saving currently, they 
-        have a clear plan to begin saving.
+    <div class="stat stat-finance-2">{{ f2 }}%</div>
+    <div class="caption caption-finance-2">
+        of residents have stated that if they are not saving currently, they have a clear plan to begin saving.
     </div>
 </div>
+
 
 
 <!-- ===================== PAGE 8 — TRAUMA / HEALING ===================== -->
@@ -90,13 +86,13 @@
     <img class="plot plot-left" src="{{ guidance }}">
     <img class="plot plot-right" src="{{ coping }}">
 
-    <div class="rect-blue rect1">{{ t1}}%</div>
-    <div class="rect-caption rect-caption-blue">
+    <div class="stat stat-therapy-1">{{ t1}}%</div>
+    <div class="caption caption-therapy-1">
         of program residents regularly attend their therapy sessions as outlined in their treatment plan
     </div>
 
-    <div class="rect-blue rect2">{{ t2}}%</div>
-    <div class="rect-caption rect-caption-blue2">
+    <div class="stat stat-therapy-2">{{ t2}}%</div>
+    <div class="caption caption-therapy-2">
         of residents state they are committed to their treatment plan and recovery goals
     </div>
 </div>
@@ -109,9 +105,9 @@
     <img class="plot plot-left" src="{{ progress }}">
     <img class="plot plot-right" src="{{ support }}">
 
-    <div class="circle yellow-circle">{{ e1}}%</div>
+    <div class="stat stat-support">{{ e1}}%</div>
 
-    <div class="caption yellow-caption">
+    <div class="caption caption-support">
         of program residents state they are satisfied with 
         the resources and support provided by the program
     </div>
