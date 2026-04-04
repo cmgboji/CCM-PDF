@@ -84,7 +84,7 @@ body {
     text-align: center;
 
     font-family: 'League Spartan';
-    font-size: 63pt;
+    font-size: 65pt;
     font-weight: 700;
     color: #fbefab;
 
@@ -96,12 +96,13 @@ body {
     position: absolute;
 
     top: 650px;
-    left: 500px;
+    left: 495px;
     width: 290px;
 
     font-family: 'Montserrat';
     font-size: 20pt;
     line-height: 1.35;
+    text-align: center;
     color: #f0d747;
 
     z-index: 10;
@@ -110,14 +111,14 @@ body {
 /* Plots inside large light blocks */
 .plot-social-left {
     position: absolute;
-    top: 300px;
+    top: 500px;
     left: 100px;
     width: 350px;
 }
 
 .plot-social-right {
     position: absolute;
-    top: 690x;
+    top: 800x;
     left: 100px;
     width: 350px;
 }
@@ -153,7 +154,7 @@ body {
 .caption-finance-1 {
     position: absolute;
     top: 480px;
-    left: 490px;
+    left: 485px;
     width: 300px;
 
     font-family: 'Montserrat';
@@ -176,7 +177,7 @@ body {
 .plot-finance-left {
     position: absolute;
     top: 280px;
-    left: 50px;
+    left: 80px;
     width: 350px;
 }
 
@@ -215,10 +216,42 @@ body {
     color: #ffffff;
 }
 
-.caption-therapy {
+.caption-therapy-1 {
+    position: absolute;
+    top: 480px;
+    left: 485px;
+    width: 300px;
+
     font-family: 'Montserrat';
     font-size: 14pt;
+    text-align: center;
     color: #76b0af;
+}
+
+.caption-therapy-2 {
+    position: absolute;
+    top: 870px;
+    left: 50px;
+    width: 280px;
+
+    font-family: 'Montserrat';
+    font-size: 14pt;
+    text-align: center;
+    color: #76b0af;
+}
+
+.plot-therapy-left {
+    position: absolute;
+    top: 280px;
+    left: 80px;
+    width: 350px;
+}
+
+.plot-therapy-right {
+    position: absolute;
+    top: 670px;
+    left: 400px;
+    width: 350px;
 }
 
 /* ================= PAGE 9 ================= */
@@ -232,16 +265,17 @@ body {
     font-size: 42pt;
     font-weight: 700;
     text-align: center;
-    color: #ffffff;
+    color: #fbefab;
 }
 
 .caption-support {
     position: absolute;
-    top: 410px;
-    left: 380px;
+    top: 600px;
+    left: 100px;
     width: 350px;
 
     font-family: 'Montserrat';
-    font-size: 14pt;
-    color: #f3623d;
+    font-size: 18pt;
+    text-align: center;
+    color: #f0d747;
 }
