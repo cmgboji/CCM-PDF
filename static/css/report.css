@@ -100,7 +100,7 @@ body {
     width: 275px;
 
     font-family: 'Montserrat';
-    font-size: 20pt;
+    font-size: 23pt;
     line-height: 1.35;
     text-align: center;
     color: #f0d747;
@@ -110,15 +110,15 @@ body {
 
 .plot-social-left {
     position: absolute;
-    top: 700px;
-    left: 75px;
+    top: 425px;
+    left: 65px;
     width: 350px;
 }
 
 .plot-social-right {
     position: absolute;
-    top: 700px;
-    left: 75px;
+    top: 680px;
+    left: 65px;
     width: 350px;
 }
 
@@ -177,7 +177,7 @@ body {
 .plot-finance-left {
     position: absolute;
     top: 280px;
-    left: 75px;
+    left: 65px;
     width: 350px;
 }
 
@@ -192,8 +192,8 @@ body {
 
 .stat-therapy-1 {
     position: absolute;
-    top: 270px;
-    left: 430px;
+    top: 280px;
+    left: 445px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -257,8 +257,8 @@ body {
 /* ================= PAGE 9 ================= */
 .stat-support {
     position: absolute;
-    top: 330px;
-    left: 100px;
+    top: 345px;
+    left: 105px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -271,25 +271,25 @@ body {
 .caption-support {
     position: absolute;
     top: 600px;
-    left: 100px;
+    left: 80px;
     width: 265px;
 
     font-family: 'Montserrat';
-    font-size: 20pt;
+    font-size: 23pt;
     text-align: center;
     color: #f0d747;
 }
 
 .plot-support-left {
     position: absolute;
-    top: 650px;
-    left: 300px;
+    top: 350px;
+    left: 340px;
     width: 350px;
 }
 
 .plot-support-right {
     position: absolute;
     top: 650px;
-    left: 300px;
+    left: 340px;
     width: 350px;
 }
