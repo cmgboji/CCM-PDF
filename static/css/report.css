@@ -45,7 +45,7 @@ body {
     width: 100%;
     text-align: center;
     font-family: 'League Spartan';
-    font-size: 40pt;
+    font-size: 44pt;
     font-weight: 700;
     color: #76b0af;
 }
@@ -84,7 +84,7 @@ body {
     text-align: center;
 
     font-family: 'League Spartan';
-    font-size: 65pt;
+    font-size: 62pt;
     font-weight: 700;
     color: #fbefab;
 
@@ -97,7 +97,7 @@ body {
 
     top: 650px;
     left: 495px;
-    width: 280px;
+    width: 265px;
 
     font-family: 'Montserrat';
     font-size: 20pt;
@@ -110,15 +110,15 @@ body {
 
 .plot-social-left {
     position: absolute;
-    top: 500px;
-    left: 100px;
+    top: 650px;
+    left: 85px;
     width: 350px;
 }
 
 .plot-social-right {
     position: absolute;
-    top: 800x;
-    left: 100px;
+    top: 900px;
+    left: 85px;
     width: 350px;
 }
 
@@ -126,7 +126,7 @@ body {
 
 .stat-finance-1 {
     position: absolute;
-    top: 328px;
+    top: 326px;
     left: 530px;
     width: 150px;
 
@@ -153,7 +153,7 @@ body {
 .caption-finance-1 {
     position: absolute;
     top: 480px;
-    left: 470x;
+    left: 470px;
     width: 300px;
 
     font-family: 'Montserrat';
@@ -177,7 +177,7 @@ body {
 .plot-finance-left {
     position: absolute;
     top: 280px;
-    left: 95px;
+    left: 85px;
     width: 350px;
 }
 
@@ -192,8 +192,8 @@ body {
 
 .stat-therapy-1 {
     position: absolute;
-    top: 285px;
-    left: 515px;
+    top: 260px;
+    left: 400px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -205,12 +205,12 @@ body {
 
 .stat-therapy-2 {
     position: absolute;
-    top: 565px;
-    left: 215px;
+    top: 700px;
+    left: 100px;
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 42pt;
+    font-size: 60pt;
     font-weight: 700;
     text-align: center;
     color: #76b0af;
@@ -220,7 +220,7 @@ body {
     position: absolute;
     top: 480px;
     left: 485px;
-    width: 300px;
+    width: 280px;
 
     font-family: 'Montserrat';
     font-size: 14pt;
@@ -243,14 +243,14 @@ body {
 .plot-trauma-left {
     position: absolute;
     top: 280px;
-    left: 80px;
+    left: 75px;
     width: 350px;
 }
 
 .plot-trauma-right {
     position: absolute;
     top: 670px;
-    left: 400px;
+    left: 430px;
     width: 350px;
 }
 
@@ -258,11 +258,11 @@ body {
 .stat-support {
     position: absolute;
     top: 285px;
-    left: 515px;
+    left: 100px;
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 42pt;
+    font-size: 60pt;
     font-weight: 700;
     text-align: center;
     color: #fbefab;
@@ -272,7 +272,7 @@ body {
     position: absolute;
     top: 600px;
     left: 100px;
-    width: 350px;
+    width: 265px;
 
     font-family: 'Montserrat';
     font-size: 18pt;
@@ -282,14 +282,14 @@ body {
 
 .plot-support-left {
     position: absolute;
-    top: 500px;
-    left: 100px;
+    top: 650px;
+    left: 250px;
     width: 350px;
 }
 
 .plot-support-right {
     position: absolute;
-    top: 800x;
-    left: 100px;
+    top: 900px;
+    left: 250px;
     width: 350px;
 }
