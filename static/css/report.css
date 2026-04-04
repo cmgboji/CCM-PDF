@@ -110,7 +110,7 @@ body {
 
 .plot-social-left {
     position: absolute;
-    top: 380px;
+    top: 350px;
     left: 65px;
     width: 350px;
 }
@@ -192,8 +192,8 @@ body {
 
 .stat-therapy-1 {
     position: absolute;
-    top: 300px;
-    left: 445px;
+    top: 326px;
+    left: 530px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -283,13 +283,13 @@ body {
 .plot-support-left {
     position: absolute;
     top: 325px;
-    left: 370px;
+    left: 410px;
     width: 350px;
 }
 
 .plot-support-right {
     position: absolute;
     top: 650px;
-    left: 370px;
+    left: 410px;
     width: 350px;
 }
