@@ -45,7 +45,7 @@ body {
     width: 100%;
     text-align: center;
     font-family: 'League Spartan';
-    font-size: 44pt;
+    font-size: 42pt;
     font-weight: 700;
     color: #76b0af;
 }
@@ -97,7 +97,7 @@ body {
 
     top: 650px;
     left: 495px;
-    width: 265px;
+    width: 275px;
 
     font-family: 'Montserrat';
     font-size: 20pt;
@@ -110,15 +110,15 @@ body {
 
 .plot-social-left {
     position: absolute;
-    top: 650px;
-    left: 85px;
+    top: 700px;
+    left: 75px;
     width: 350px;
 }
 
 .plot-social-right {
     position: absolute;
-    top: 900px;
-    left: 85px;
+    top: 700px;
+    left: 75px;
     width: 350px;
 }
 
@@ -177,7 +177,7 @@ body {
 .plot-finance-left {
     position: absolute;
     top: 280px;
-    left: 85px;
+    left: 75px;
     width: 350px;
 }
 
@@ -192,28 +192,28 @@ body {
 
 .stat-therapy-1 {
     position: absolute;
-    top: 260px;
-    left: 400px;
-    width: 150px;
-
-    font-family: 'League Spartan';
-    font-size: 42pt;
-    font-weight: 700;
-    text-align: center;
-    color: #76b0af
-}
-
-.stat-therapy-2 {
-    position: absolute;
-    top: 700px;
-    left: 100px;
+    top: 270px;
+    left: 430px;
     width: 150px;
 
     font-family: 'League Spartan';
     font-size: 60pt;
     font-weight: 700;
     text-align: center;
-    color: #76b0af;
+    color: #cedbdb
+}
+
+.stat-therapy-2 {
+    position: absolute;
+    top: 700px;
+    left: 80px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 60pt;
+    font-weight: 700;
+    text-align: center;
+    color: #cedbdb;
 }
 
 .caption-therapy-1 {
@@ -243,21 +243,21 @@ body {
 .plot-trauma-left {
     position: absolute;
     top: 280px;
-    left: 75px;
+    left: 65px;
     width: 350px;
 }
 
 .plot-trauma-right {
     position: absolute;
     top: 670px;
-    left: 430px;
+    left: 420px;
     width: 350px;
 }
 
 /* ================= PAGE 9 ================= */
 .stat-support {
     position: absolute;
-    top: 285px;
+    top: 330px;
     left: 100px;
     width: 150px;
 
@@ -275,7 +275,7 @@ body {
     width: 265px;
 
     font-family: 'Montserrat';
-    font-size: 18pt;
+    font-size: 20pt;
     text-align: center;
     color: #f0d747;
 }
@@ -283,13 +283,13 @@ body {
 .plot-support-left {
     position: absolute;
     top: 650px;
-    left: 250px;
+    left: 300px;
     width: 350px;
 }
 
 .plot-support-right {
     position: absolute;
-    top: 900px;
-    left: 250px;
+    top: 650px;
+    left: 300px;
     width: 350px;
 }
