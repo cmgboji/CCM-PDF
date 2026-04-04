@@ -110,7 +110,7 @@ body {
 
 .plot-social-left {
     position: absolute;
-    top: 325px;
+    top: 290px;
     left: 65px;
     width: 350px;
 }
@@ -164,7 +164,7 @@ body {
 
 .caption-finance-2 {
     position: absolute;
-    top: 867px;
+    top: 865px;
     left: 50px;
     width: 280px;
 
@@ -192,7 +192,7 @@ body {
 
 .stat-therapy-1 {
     position: absolute;
-    top: 326px;
+    top: 323px;
     left: 510px;
     width: 150px;
 
@@ -257,7 +257,7 @@ body {
 /* ================= PAGE 9 ================= */
 .stat-support {
     position: absolute;
-    top: 405px;
+    top: 410px;
     left: 105px;
     width: 150px;
 
@@ -271,7 +271,7 @@ body {
 .caption-support {
     position: absolute;
     top: 600px;
-    left: 65px;
+    left: 60px;
     width: 260px;
 
     font-family: 'Montserrat';
@@ -282,14 +282,14 @@ body {
 
 .plot-support-left {
     position: absolute;
-    top: 290px;
-    left: 400px;
+    top: 260px;
+    left: 380px;
     width: 350px;
 }
 
 .plot-support-right {
     position: absolute;
     top: 650px;
-    left: 400px;
+    left: 380px;
     width: 350px;
 }
