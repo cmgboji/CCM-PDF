@@ -110,7 +110,7 @@ body {
 
 .plot-social-left {
     position: absolute;
-    top: 350px;
+    top: 325px;
     left: 65px;
     width: 350px;
 }
@@ -157,14 +157,14 @@ body {
     width: 300px;
 
     font-family: 'Montserrat';
-    font-size: 14pt;
+    font-size: 16pt;
     text-align: center;
     color: #f3623d;
 }
 
 .caption-finance-2 {
     position: absolute;
-    top: 870px;
+    top: 867px;
     left: 50px;
     width: 280px;
 
@@ -193,7 +193,7 @@ body {
 .stat-therapy-1 {
     position: absolute;
     top: 326px;
-    left: 530px;
+    left: 510px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -223,7 +223,7 @@ body {
     width: 280px;
 
     font-family: 'Montserrat';
-    font-size: 14pt;
+    font-size: 16pt;
     text-align: center;
     color: #76b0af;
 }
@@ -235,7 +235,7 @@ body {
     width: 280px;
 
     font-family: 'Montserrat';
-    font-size: 14pt;
+    font-size: 16pt;
     text-align: center;
     color: #76b0af;
 }
@@ -257,7 +257,7 @@ body {
 /* ================= PAGE 9 ================= */
 .stat-support {
     position: absolute;
-    top: 400px;
+    top: 405px;
     left: 105px;
     width: 150px;
 
@@ -272,7 +272,7 @@ body {
     position: absolute;
     top: 600px;
     left: 65px;
-    width: 265px;
+    width: 260px;
 
     font-family: 'Montserrat';
     font-size: 23pt;
@@ -282,14 +282,14 @@ body {
 
 .plot-support-left {
     position: absolute;
-    top: 325px;
-    left: 410px;
+    top: 290px;
+    left: 400px;
     width: 350px;
 }
 
 .plot-support-right {
     position: absolute;
     top: 650px;
-    left: 410px;
+    left: 400px;
     width: 350px;
 }
