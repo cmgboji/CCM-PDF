@@ -84,7 +84,7 @@ body {
     text-align: center;
 
     font-family: 'League Spartan';
-    font-size: 60pt;
+    font-size: 63pt;
     font-weight: 700;
     color: #fbefab;
 
@@ -140,7 +140,7 @@ body {
 .stat-finance-2 {
     position: absolute;
     top: 700px;
-    left: 100px;
+    left: 80px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -153,11 +153,12 @@ body {
 .caption-finance-1 {
     position: absolute;
     top: 480px;
-    left: 460px;
+    left: 490px;
     width: 300px;
 
     font-family: 'Montserrat';
     font-size: 14pt;
+    text-align: center;
     color: #f3623d;
 }
 
@@ -165,7 +166,7 @@ body {
     position: absolute;
     top: 870px;
     left: 50px;
-    width: 300px;
+    width: 280px;
 
     font-family: 'Montserrat';
     font-size: 14pt;
@@ -175,14 +176,14 @@ body {
 .plot-finance-left {
     position: absolute;
     top: 280px;
-    left: 110px;
+    left: 50px;
     width: 350px;
 }
 
 .plot-finance-right {
     position: absolute;
-    top: 650px;
-    left: 415px;
+    top: 670px;
+    left: 400px;
     width: 350px;
 }
 
