@@ -77,7 +77,7 @@ body {
 .stat-social {
     position: absolute;
 
-    top: 450px;     
+    top: 455px;     
     left: 550px;   
 
     width: 160px;
@@ -95,7 +95,7 @@ body {
 .caption-social {
     position: absolute;
 
-    top: 647px;
+    top: 645px;
     left: 493px;
     width: 275px;
 
@@ -157,7 +157,7 @@ body {
     width: 300px;
 
     font-family: 'Montserrat';
-    font-size: 16pt;
+    font-size: 14pt;
     text-align: center;
     color: #f3623d;
 }
@@ -230,7 +230,7 @@ body {
 
 .caption-therapy-2 {
     position: absolute;
-    top: 870px;
+    top: 867px;
     left: 50px;
     width: 280px;
 
@@ -283,13 +283,13 @@ body {
 .plot-support-left {
     position: absolute;
     top: 260px;
-    left: 380px;
+    left: 390px;
     width: 350px;
 }
 
 .plot-support-right {
     position: absolute;
     top: 650px;
-    left: 380px;
+    left: 390px;
     width: 350px;
 }
