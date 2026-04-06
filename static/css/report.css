@@ -95,7 +95,7 @@ body {
 .caption-social {
     position: absolute;
 
-    top: 645px;
+    top: 640px;
     left: 493px;
     width: 275px;
 
@@ -220,7 +220,7 @@ body {
     position: absolute;
     top: 470px;
     left: 485px;
-    width: 280px;
+    width: 285px;
 
     font-family: 'Montserrat';
     font-size: 16pt;
@@ -230,7 +230,7 @@ body {
 
 .caption-therapy-2 {
     position: absolute;
-    top: 865px;
+    top: 862px;
     left: 50px;
     width: 280px;
 
@@ -305,14 +305,14 @@ body {
 
 .plot-employment {
     position: absolute;
-    top: 500px;
+    top: 495px;
     left: 350px;
     width: 400px;
 }
 
 .plot-doing {
     position: absolute;
-    top: 800px;
+    top: 780px;
     left: 55px;
     width: 400px;
 }
@@ -320,11 +320,11 @@ body {
 .stat-sob {
     position: absolute;
     top: 210px;
-    left: 550px;
+    left: 560px;
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 56pt;
+    font-size: 52pt;
     font-weight: 700;
     text-align: center;
     color: #f0d747;
@@ -332,12 +332,12 @@ body {
 
 .stat-sup {
     position: absolute;
-    top: 550px;
+    top: 530px;
     left: 90px;
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 56pt;
+    font-size: 52pt;
     font-weight: 700;
     text-align: center;
     color: #f3623d;
@@ -346,11 +346,11 @@ body {
 .stat-con {
     position: absolute;
     top: 810px;
-    left: 550px;
+    left: 560px;
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 56pt;
+    font-size: 52pt;
     font-weight: 700;
     text-align: center;
     color: #76b0af;
@@ -358,9 +358,9 @@ body {
 
 .caption-sob {
     position: absolute;
-    top: 330px;
+    top: 335px;
     left: 525px;
-    width: 260px;
+    width: 255px;
 
     font-family: 'Montserrat';
     font-size: 12pt;
@@ -370,9 +370,9 @@ body {
 
 .caption-sup {
     position: absolute;
-    top: 650px;
+    top: 630px;
     left: 55px;
-    width: 260px;
+    width: 255px;
 
     font-family: 'Montserrat';
     font-size: 12pt;
@@ -382,9 +382,9 @@ body {
 
 .caption-con {
     position: absolute;
-    top: 1000px;
+    top: 950px;
     left: 530px;
-    width: 260px;
+    width: 255px;
 
     font-family: 'Montserrat';
     font-size: 12pt;
