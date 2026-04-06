@@ -219,7 +219,7 @@ body {
 .caption-therapy-1 {
     position: absolute;
     top: 470px;
-    left: 485px;
+    left: 480px;
     width: 285px;
 
     font-family: 'Montserrat';
@@ -319,7 +319,7 @@ body {
 
 .stat-sob {
     position: absolute;
-    top: 210px;
+    top: 215px;
     left: 570px;
     width: 150px;
 
@@ -371,7 +371,7 @@ body {
 .caption-sup {
     position: absolute;
     top: 630px;
-    left: 50px;
+    left: 43px;
     width: 250px;
 
     font-family: 'Montserrat';
@@ -383,7 +383,7 @@ body {
 .caption-con {
     position: absolute;
     top: 935px;
-    left: 530px;
+    left: 525px;
     width: 250px;
 
     font-family: 'Montserrat';
