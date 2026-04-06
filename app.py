@@ -96,9 +96,10 @@ def run():
     try:
         df['Timestamp'] = pd.to_datetime(df['Timestamp'])
         df = df[df['Timestamp'].dt.year == int(year)]
+        grad = grad[grad['Follow-Up Period'] == '12 Months']
     except Exception as e:
         print("Error converting Timestamp:", e)
-        return "There was an error converting the Timestamp column."
+        return "There was a time-related error. Please make sure that you entered a valid year and that the 'Timestamp' column in your Excel file is properly formatted as dates."
 
     
     try:
