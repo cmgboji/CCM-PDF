@@ -307,19 +307,19 @@ body {
     position: absolute;
     top: 500px;
     left: 300px;
-    width: 40px;
+    width: 400px;
 }
 
 .plot-doing {
     position: absolute;
-    top: 720px;
+    top: 760px;
     left: 55px;
     width: 400px;
 }
 
 .stat-sob {
     position: absolute;
-    top: 220px;
+    top: 210px;
     left: 550px;
     width: 150px;
 
@@ -359,11 +359,11 @@ body {
 .caption-sob {
     position: absolute;
     top: 330px;
-    left: 530px;
+    left: 525px;
     width: 260px;
 
     font-family: 'Montserrat';
-    font-size: 14pt;
+    font-size: 13pt;
     text-align: center;
     color: #fbefab;
 }
@@ -371,11 +371,11 @@ body {
 .caption-sup {
     position: absolute;
     top: 600px;
-    left: 65px;
+    left: 55px;
     width: 260px;
 
     font-family: 'Montserrat';
-    font-size: 14pt;
+    font-size: 13pt;
     text-align: center;
     color: #f5b4a4;
 }
@@ -383,11 +383,11 @@ body {
 .caption-con {
     position: absolute;
     top: 900px;
-    left: 550px;
+    left: 530px;
     width: 260px;
 
     font-family: 'Montserrat';
-    font-size: 14pt;
+    font-size: 13pt;
     text-align: center;
     color: #cedbdb;
 }
