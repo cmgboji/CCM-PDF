@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-def plot(series, column_index, title, color, filename):
+def plot_yag(series, column_index, title, color, filename):
     os.makedirs("static/plots", exist_ok=True)
     counts = (series.iloc[:, column_index]
                     .dropna()
@@ -48,12 +48,38 @@ def plot(series, column_index, title, color, filename):
 
     return save_path
 
-def get_stats(df, col):
+def stats_yag(df, col):
     return int(round(df.iloc[:,col][df.iloc[:,col] > 3].count()/df.iloc[:,col].dropna().count(), 2) * 100)
 
-# def output_pdf(plot_paths, stats):
-#     # Placeholder for PDF generation logic
-#     pass
+def plot_imp(data, column, title, color, filename):
+    os.makedirs("static/plots", exist_ok=True)
+    counts = data.iloc[:,column].value_counts(normalize=True) * 100
+
+    plt.figure(figsize=(6, 4))
+    ax = sns.barplot(x=counts.values, y=counts.index, color=color)
+    plt.ylabel(None)
+    plt.title(title)
+    plt.xlim(0, 100)
+    plt.xticks(rotation=45)
+    plt.box(False)
+    ax.xaxis.set_visible(False)
+
+    for bar, pct in zip(ax.patches, counts.values):
+        if pct > 0:
+            ax.text(
+                bar.get_width() + .2,
+                bar.get_y() + bar.get_height() / 2,
+                f'{pct:.0f}%',
+                va='center'
+            )
+
+    save_path = f"static/plots/{filename}.jpg"
+    plt.savefig(save_path, dpi=100, bbox_inches='tight')
+    plt.close()
+    return save_path
+
+def stats_imp(df, col):
+    return int(round(((df.iloc[:,col][df.iloc[:,col] == "Yes"].count() / len(df)) * 100), 2))
 
 @app.route('/run', methods=['POST'])
 def run():
@@ -61,6 +87,7 @@ def run():
     workbook = request.files.get('workbook')
     try:
         df = pd.read_excel(workbook, sheet_name='Raw Self Assessment', engine='openpyxl')
+        grad = pd.read_excel(workbook, sheet_name='Graduate Responses', engine='openpyxl')
     except Exception as e:
         print("Error reading Excel file:", e)
         return "There was an error processing the uploaded file. Please ensure it's a valid Excel workbook (.xlsx) with the correct sheet name 'Raw Self Assessment'."
@@ -90,14 +117,17 @@ def run():
 
     try:
         plot_paths = {
-            "connected": plot(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
-            "participation": plot(social, 2, 'Actively participating in group activities and discussions', yellow, "participation_plot"),
-            "finance": plot(finance, 1, 'Has secured or actively working towards securing employment', coral, "finance_plot"),
-            "schedule": plot(auto, 0, 'Creates and follows daily schedule to meet responsibilites', coral, "schedule_plot"),
-            "guidance": plot(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
-            "coping": plot(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
-            "progress": plot(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
-            "support": plot(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot")
+            "connected": plot_yag(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
+            "participation": plot_yag(social, 2, 'Actively participating in group activities and discussions', yellow, "participation_plot"),
+            "finance": plot_yag(finance, 1, 'Has secured or actively working towards securing employment', coral, "finance_plot"),
+            "schedule": plot_yag(auto, 0, 'Creates and follows daily schedule to meet responsibilites', coral, "schedule_plot"),
+            "guidance": plot_yag(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
+            "coping": plot_yag(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
+            "progress": plot_yag(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
+            "support": plot_yag(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot"),
+            "housing": plot_imp(grad, 5, 'Current Housing Situation of Graduates', coral, "housing_plot"),
+            "employment": plot_imp(grad, 6, 'Employment Status of Graduates', teal, "employment_plot"),
+            "doing": plot_imp(grad, 11, 'How Graduates Report to be Doing', yellow, "doing_plot")
         }
     
     except Exception as e:
@@ -105,12 +135,16 @@ def run():
         return "There was an error generating the plots. Please ensure the data is structured correctly and try again."
 
     try:
-        stats = {'s1': get_stats(social, 1), 
-                'f1': get_stats(finance, 0), 
-                'f2': get_stats(finance, 3), 
-                't1': get_stats(trauma, 0), 
-                't2': get_stats(trauma, 4), 
-                'e1': get_stats(engagement, 5)}
+        stats = {'s1': stats_yag(social, 1), 
+                'f1': stats_yag(finance, 0), 
+                'f2': stats_yag(finance, 3), 
+                't1': stats_yag(trauma, 0), 
+                't2': stats_yag(trauma, 4), 
+                'e1': stats_yag(engagement, 5),
+                'sob': stats_imp(grad, 8),
+                'sup': stats_imp(grad, 10),
+                'con': stats_imp(grad, 13)
+                }
         
     except Exception as e:
         print("Error calculating statistics:", e)
@@ -135,6 +169,13 @@ def run():
             t1=stats["t1"],
             t2=stats["t2"],
             e1=stats["e1"],
+            housing=plot_paths["housing"],
+            employment=plot_paths["employment"],
+            doing=plot_paths["doing"],
+            sob=stats["sob"],
+            sup=stats["sup"],
+            con=stats["con"]
+
         )
 
         
