@@ -77,7 +77,7 @@ body {
 .stat-social {
     position: absolute;
 
-    top: 455px;     
+    top: 450px;     
     left: 550px;   
 
     width: 160px;
@@ -110,7 +110,7 @@ body {
 
 .plot-social-left {
     position: absolute;
-    top: 290px;
+    top: 295px;
     left: 65px;
     width: 350px;
 }
@@ -164,7 +164,7 @@ body {
 
 .caption-finance-2 {
     position: absolute;
-    top: 865px;
+    top: 860px;
     left: 50px;
     width: 280px;
 
@@ -218,7 +218,7 @@ body {
 
 .caption-therapy-1 {
     position: absolute;
-    top: 480px;
+    top: 470px;
     left: 485px;
     width: 280px;
 
@@ -230,7 +230,7 @@ body {
 
 .caption-therapy-2 {
     position: absolute;
-    top: 867px;
+    top: 865px;
     left: 50px;
     width: 280px;
 
@@ -283,14 +283,14 @@ body {
 .plot-support-left {
     position: absolute;
     top: 260px;
-    left: 390px;
+    left: 395px;
     width: 350px;
 }
 
 .plot-support-right {
     position: absolute;
-    top: 650px;
-    left: 390px;
+    top: 660px;
+    left: 395px;
     width: 350px;
 }
 
@@ -298,7 +298,7 @@ body {
 
 .plot-housing {
     position: absolute;
-    top: 210px;
+    top: 200px;
     left: 55px;
     width: 400px;
 }
@@ -306,13 +306,13 @@ body {
 .plot-employment {
     position: absolute;
     top: 500px;
-    left: 300px;
+    left: 350px;
     width: 400px;
 }
 
 .plot-doing {
     position: absolute;
-    top: 760px;
+    top: 800px;
     left: 55px;
     width: 400px;
 }
@@ -324,7 +324,7 @@ body {
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 60pt;
+    font-size: 56pt;
     font-weight: 700;
     text-align: center;
     color: #f0d747;
@@ -332,12 +332,12 @@ body {
 
 .stat-sup {
     position: absolute;
-    top: 500px;
+    top: 550px;
     left: 90px;
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 60pt;
+    font-size: 56pt;
     font-weight: 700;
     text-align: center;
     color: #f3623d;
@@ -350,7 +350,7 @@ body {
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 60pt;
+    font-size: 56pt;
     font-weight: 700;
     text-align: center;
     color: #76b0af;
@@ -363,31 +363,31 @@ body {
     width: 260px;
 
     font-family: 'Montserrat';
-    font-size: 13pt;
+    font-size: 12pt;
     text-align: center;
     color: #fbefab;
 }
 
 .caption-sup {
     position: absolute;
-    top: 600px;
+    top: 650px;
     left: 55px;
     width: 260px;
 
     font-family: 'Montserrat';
-    font-size: 13pt;
+    font-size: 12pt;
     text-align: center;
     color: #f5b4a4;
 }
 
 .caption-con {
     position: absolute;
-    top: 900px;
+    top: 1000px;
     left: 530px;
     width: 260px;
 
     font-family: 'Montserrat';
-    font-size: 13pt;
+    font-size: 12pt;
     text-align: center;
     color: #cedbdb;
 }
