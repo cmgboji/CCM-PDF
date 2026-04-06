@@ -320,11 +320,11 @@ body {
 .stat-sob {
     position: absolute;
     top: 210px;
-    left: 560px;
+    left: 570px;
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 52pt;
+    font-size: 48pt;
     font-weight: 700;
     text-align: center;
     color: #f0d747;
@@ -332,12 +332,12 @@ body {
 
 .stat-sup {
     position: absolute;
-    top: 530px;
+    top: 510px;
     left: 90px;
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 52pt;
+    font-size: 48pt;
     font-weight: 700;
     text-align: center;
     color: #f3623d;
@@ -345,12 +345,12 @@ body {
 
 .stat-con {
     position: absolute;
-    top: 810px;
-    left: 560px;
+    top: 815px;
+    left: 570px;
     width: 150px;
 
     font-family: 'League Spartan';
-    font-size: 52pt;
+    font-size: 48pt;
     font-weight: 700;
     text-align: center;
     color: #76b0af;
@@ -360,7 +360,7 @@ body {
     position: absolute;
     top: 335px;
     left: 525px;
-    width: 255px;
+    width: 250px;
 
     font-family: 'Montserrat';
     font-size: 12pt;
@@ -371,8 +371,8 @@ body {
 .caption-sup {
     position: absolute;
     top: 630px;
-    left: 55px;
-    width: 255px;
+    left: 50px;
+    width: 250px;
 
     font-family: 'Montserrat';
     font-size: 12pt;
@@ -382,9 +382,9 @@ body {
 
 .caption-con {
     position: absolute;
-    top: 950px;
+    top: 935px;
     left: 530px;
-    width: 255px;
+    width: 250px;
 
     font-family: 'Montserrat';
     font-size: 12pt;
