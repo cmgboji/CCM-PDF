@@ -41,21 +41,23 @@
 
   <body>
     <h1 style="text-align: center; color: #f3623d;">Annual Impact Report Generator</h1>
-    <img src="static/backgrounds/mh.webp" alt="Background Image" style="text-align:center; width: 100%; max-width: 300px;">
-    <p style="color: #f3623d;">The purpose of this website is to generate annual impact reports based on the resident's
+    <img src="static/backgrounds/mh.webp" alt="Background Image" style="display: block; margin-left: auto; margin-right: auto; width: 100%; max-width: 225px;">                                                                                                                                                                                                                                 
+
+    <p style="text-align: center; color: #f3623d;">The purpose of this website is to generate annual impact reports based on the resident's
       self-assessments provided in the Care Coordination Meetings and alumni status updates given
        in the Graduate Follow-Up forms. The generated report will be in PDF format and will include 
        various statistics and visualizations to showcase the impact of the program on the residents' 
-       lives. To successfully generate a report, download the Magdalene House Dashboard spreadsheet 
-       as an Excel workbook (.xlsx) and click <b>Choose File</b>. From there, enter the desired year 
+       lives. <br> To successfully generate a report, download the Magdalene House Dashboard spreadsheet 
+       as an Excel workbook (<i>.xlsx</i>) and click <b>Choose File</b>. From there, enter the desired year 
        and click <b>Generate PDF</b>. The website will process the data and create a comprehensive 
-       report that highlights the key outcomes and achievements of the program for that year.</p>
+       report that highlights the key outcomes and achievements of the program for that year.<br></p>
+
     <h2>Enter a year</h2>
 
     <form method="POST" action="/run" enctype="multipart/form-data">
       <input type="text" name="year" placeholder="Enter desired year">
       <input type="file" name="workbook" accept=".xlsx">
       <input type="submit" value="Generate PDF">
-    </form>                                                                                                                                                                                                                                 
+    </form>
   </body>
 </html>
