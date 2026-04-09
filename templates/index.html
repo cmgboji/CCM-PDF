@@ -2,13 +2,15 @@
 <html lang="en">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: League Spartan, sans-serif;
+      src: url('static/fonts/LeagueSpartan-Regular.ttf');
       background-color: #fcebe7;
       margin: 20px;
     }
 
     h2 {
       color: #f3623d;
+      text-align: center;
     }
 
     form {
@@ -36,9 +38,10 @@
       background-color: #f3623d;
     }
   </style>
+
   <body>
+    <img src="static/backgrounds/mh.webp" alt="Background Image" style="width: 100%; max-width: 300px;">
     <h2>Enter a year</h2>
-    <img src="static/backgrounds/mh.webp" alt="Background Image" style="width: 100%; max-width: 600px;">
 
     <form method="POST" action="/run" enctype="multipart/form-data">
       <input type="text" name="year" placeholder="Enter desired year">
