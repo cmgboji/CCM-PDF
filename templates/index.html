@@ -3,11 +3,12 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #fcebe7;
       margin: 20px;
     }
 
     h2 {
-      color: #333;
+      color: #f3623d;
     }
 
     form {
@@ -23,7 +24,7 @@
     }
 
     input[type="submit"] {
-      background-color: #007bff;
+      background-color: #f3623d;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -32,11 +33,12 @@
     }
 
     input[type="submit"]:hover {
-      background-color: #0056b3;
+      background-color: #f3623d;
     }
   </style>
   <body>
     <h2>Enter a year</h2>
+    <img src="static/backgrounds/mh.webp" alt="Background Image" style="width: 100%; max-width: 600px;">
 
     <form method="POST" action="/run" enctype="multipart/form-data">
       <input type="text" name="year" placeholder="Enter desired year">
