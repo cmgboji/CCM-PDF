@@ -26,6 +26,11 @@
       color: #f3623d;
     }
 
+    h3 {
+      font-family: 'League Spartan', sans-serif;
+      color: #f3623d;
+    }
+
     form {
       margin-top: 20px;
     }
@@ -63,7 +68,9 @@
        lives. <br><br> To successfully generate a report, download the Magdalene House Dashboard spreadsheet 
        as an Excel workbook (<i>.xlsx</i>) and click <b>Choose File</b>. From there, enter the desired year 
        and click <b>Generate PDF</b>. The website will process the data and create a comprehensive 
-       report that highlights the key outcomes and achievements of the program for that year.<br><br></p>
+       report that highlights the key outcomes and achievements of the program for that year.<br><br>
+      <br><br><b>Please note:</b> If there are no graduate responses from a 12-month follow-up available, 
+      the graduate outcomes section will be omitted from the report.<br><br></p>
 
     <h2>Enter a year</h2>
 
@@ -72,5 +79,14 @@
       <input type="file" name="workbook" accept=".xlsx">
       <input type="submit" value="Generate PDF">
     </form>
+
+    <h3>General Tips:</h3>
+    <ul style="color: #76b0af;">
+      <li>Ensure that the uploaded Excel workbook contains a sheet named <b>Raw Self Assessment</b> and another named <b>Graduate Responses</b>. An error message will be displayed if these sheets are missing.</li>
+      <li>Double-check the entered year to ensure that the data for that year is present in the workbook. The earliest year available is 2024.</li>
+      <li>After clicking "Generate PDF," allow some time for the processing to complete, especially if the workbook contains a large amount of data.</li>
+      <li>If you encounter any issues or errors during the report generation process, contact technical support for assistance.</li>
+    </ul>
+
   </body>
 </html>
