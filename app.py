@@ -172,11 +172,13 @@ def run():
         return "There was an error calculating the statistics. Please ensure the data is structured correctly and try again."
 
     try:
-        if len(grad) > 0:
+        grad_data = len(grad) > 0
+        if grad_data:
             html = render_template(
                 "report_template.html",
                 base_url=request.host_url,
                 year=year,
+                grad_data=grad_data,
                 connected=plot_paths["connected"],
                 participation=plot_paths["participation"],
                 finance=plot_paths["finance"],
@@ -204,6 +206,7 @@ def run():
                 "report_template.html",
                 base_url=request.host_url,
                 year=year,
+                grad_data=grad_data,
                 connected=plot_paths["connected"],
                 participation=plot_paths["participation"],
                 finance=plot_paths["finance"],
