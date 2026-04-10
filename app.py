@@ -117,67 +117,108 @@ def run():
     yellow = '#f0d747'
 
     try:
-        plot_paths = {
-            "connected": plot_yag(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
-            "participation": plot_yag(social, 2, 'Actively participating in group activities and discussions', yellow, "participation_plot"),
-            "finance": plot_yag(finance, 1, 'Has secured or actively working towards securing employment', coral, "finance_plot"),
-            "schedule": plot_yag(auto, 0, 'Creates and follows daily schedule to meet responsibilites', coral, "schedule_plot"),
-            "guidance": plot_yag(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
-            "coping": plot_yag(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
-            "progress": plot_yag(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
-            "support": plot_yag(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot"),
-            "housing": plot_imp(grad, 5, 'Current Housing Situation of Graduates', coral, "housing_plot"),
-            "employment": plot_imp(grad, 6, 'Employment Status of Graduates', teal, "employment_plot"),
-            "doing": plot_imp(grad, 11, 'How Graduates Report to be Doing', yellow, "doing_plot")
-        }
-    
+        if len(grad) > 0:
+            plot_paths = {
+                "connected": plot_yag(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
+                "participation": plot_yag(social, 2, 'Actively participating in group activities and discussions', yellow, "participation_plot"),
+                "finance": plot_yag(finance, 1, 'Has secured or actively working towards securing employment', coral, "finance_plot"),
+                "schedule": plot_yag(auto, 0, 'Creates and follows daily schedule to meet responsibilites', coral, "schedule_plot"),
+                "guidance": plot_yag(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
+                "coping": plot_yag(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
+                "progress": plot_yag(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
+                "support": plot_yag(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot"),
+                "housing": plot_imp(grad, 5, 'Current Housing Situation of Graduates', coral, "housing_plot"),
+                "employment": plot_imp(grad, 6, 'Employment Status of Graduates', teal, "employment_plot"),
+                "doing": plot_imp(grad, 11, 'How Graduates Report to be Doing', yellow, "doing_plot")
+            }
+        else:
+            plot_paths = {
+                "connected": plot_yag(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
+                "participation": plot_yag(social, 2, 'Actively participating in group activities and discussions', yellow, "participation_plot"),
+                "finance": plot_yag(finance, 1, 'Has secured or actively working towards securing employment', coral, "finance_plot"),
+                "schedule": plot_yag(auto, 0, 'Creates and follows daily schedule to meet responsibilites', coral, "schedule_plot"),
+                "guidance": plot_yag(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
+                "coping": plot_yag(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
+                "progress": plot_yag(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
+                "support": plot_yag(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot"),
+             }
     except Exception as e:
         print("Error generating plots:", e)
         return "There was an error generating the plots. Please ensure the data is structured correctly and try again."
 
     try:
-        stats = {'s1': stats_yag(social, 1), 
-                'f1': stats_yag(finance, 0), 
-                'f2': stats_yag(finance, 3), 
-                't1': stats_yag(trauma, 0), 
-                't2': stats_yag(trauma, 4), 
-                'e1': stats_yag(engagement, 5),
-                'sob': stats_imp(grad, 8),
-                'sup': stats_imp(grad, 10),
-                'con': stats_imp(grad, 13)
-                }
+        if len(grad) > 0:
+            stats = {'s1': stats_yag(social, 1), 
+                    'f1': stats_yag(finance, 0), 
+                    'f2': stats_yag(finance, 3), 
+                    't1': stats_yag(trauma, 0), 
+                    't2': stats_yag(trauma, 4), 
+                    'e1': stats_yag(engagement, 5),
+                    'sob': stats_imp(grad, 8),
+                    'sup': stats_imp(grad, 10),
+                    'con': stats_imp(grad, 13)
+                    }
+        else:
+            stats = {'s1': stats_yag(social, 1), 
+                    'f1': stats_yag(finance, 0), 
+                    'f2': stats_yag(finance, 3), 
+                    't1': stats_yag(trauma, 0), 
+                    't2': stats_yag(trauma, 4), 
+                    'e1': stats_yag(engagement, 5)
+                    }
         
     except Exception as e:
         print("Error calculating statistics:", e)
         return "There was an error calculating the statistics. Please ensure the data is structured correctly and try again."
 
     try:
-        html = render_template(
-            "report_template.html",
-            base_url=request.host_url,
-            year=year,
-            connected=plot_paths["connected"],
-            participation=plot_paths["participation"],
-            finance=plot_paths["finance"],
-            schedule=plot_paths["schedule"],
-            guidance=plot_paths["guidance"],
-            coping=plot_paths["coping"],
-            progress=plot_paths["progress"],
-            support=plot_paths["support"],
-            s1=stats["s1"],
-            f1=stats["f1"],
-            f2=stats["f2"],
-            t1=stats["t1"],
-            t2=stats["t2"],
-            e1=stats["e1"],
-            housing=plot_paths["housing"],
-            employment=plot_paths["employment"],
-            doing=plot_paths["doing"],
-            sob=stats["sob"],
-            sup=stats["sup"],
-            con=stats["con"]
+        if len(grad) > 0:
+            html = render_template(
+                "report_template.html",
+                base_url=request.host_url,
+                year=year,
+                connected=plot_paths["connected"],
+                participation=plot_paths["participation"],
+                finance=plot_paths["finance"],
+                schedule=plot_paths["schedule"],
+                guidance=plot_paths["guidance"],
+                coping=plot_paths["coping"],
+                progress=plot_paths["progress"],
+                support=plot_paths["support"],
+                s1=stats["s1"],
+                f1=stats["f1"],
+                f2=stats["f2"],
+                t1=stats["t1"],
+                t2=stats["t2"],
+                e1=stats["e1"],
+                housing=plot_paths["housing"],
+                employment=plot_paths["employment"],
+                doing=plot_paths["doing"],
+                sob=stats["sob"],
+                sup=stats["sup"],
+                con=stats["con"]
 
-        )
+            )
+        else:
+            html = render_template(
+                "report_template.html",
+                base_url=request.host_url,
+                year=year,
+                connected=plot_paths["connected"],
+                participation=plot_paths["participation"],
+                finance=plot_paths["finance"],
+                schedule=plot_paths["schedule"],
+                guidance=plot_paths["guidance"],
+                coping=plot_paths["coping"],
+                progress=plot_paths["progress"],
+                support=plot_paths["support"],
+                s1=stats["s1"],
+                f1=stats["f1"],
+                f2=stats["f2"],
+                t1=stats["t1"],
+                t2=stats["t2"],
+                e1=stats["e1"]
+            )
 
         
         pdf_path = f"static/{year} Impact Report.pdf"
