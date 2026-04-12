@@ -74,7 +74,7 @@ body {
 /* ================= PAGE 6 ================= */
 
 /* Big % over dark yellow circle */
-.stat-social {
+.stat-social-norm {
     position: absolute;
 
     top: 450px;     
@@ -85,6 +85,23 @@ body {
 
     font-family: 'League Spartan';
     font-size: 62pt;
+    font-weight: 700;
+    color: #fbefab;
+
+    z-index: 10;
+}
+
+.stat-social-high {
+    position: absolute;
+
+    top: 450px;     
+    left: 550px;   
+
+    width: 160px;
+    text-align: center;
+
+    font-family: 'League Spartan';
+    font-size: 52pt;
     font-weight: 700;
     color: #fbefab;
 

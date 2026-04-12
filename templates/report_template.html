@@ -48,7 +48,11 @@
     <img class="plot plot-social-left" src="{{ connected }}">
     <img class="plot plot-social-right" src="{{ participation }}">
 
-    <div class="stat stat-social">{{ s1 }}%</div>
+    {% if 100 > s1 %}
+    <div class="stat stat-social-norm">{{ s1 }}%</div>
+    {% else %}
+    <div class="stat stat-social-high">{{ s1 }}%</div>
+    {% endif %}
 
     <div class="caption caption-social">
         of program residents report to have built meaningful relationships
