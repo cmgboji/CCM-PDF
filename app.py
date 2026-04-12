@@ -21,7 +21,7 @@ def plot_yag(series, column_index, title, color, filename):
 
     sns.set_theme(style='white', font='Century Gothic', rc={'axes.facecolor': 'white'})
 
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(8, 5))
     ax = sns.barplot(x=counts.index, y=counts.values, color=color)
     ax.set_xlabel('Score')
     ax.set_title(title)
@@ -122,13 +122,13 @@ def run():
         if len(grad) > 0:
             plot_paths = {
                 "connected": plot_yag(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
-                "participation": plot_yag(social, 2, 'Actively participating in group activities and discussions', yellow, "participation_plot"),
+                "participation": plot_yag(social, 2, 'Actively participates in group discussions', yellow, "participation_plot"),
                 "finance": plot_yag(finance, 1, 'Has secured or actively working towards securing employment', coral, "finance_plot"),
-                "schedule": plot_yag(auto, 0, 'Creates and follows daily schedule to meet responsibilites', coral, "schedule_plot"),
-                "guidance": plot_yag(trauma, 2, 'Seeking guidance when facing challenges', teal, "guidance_plot"),
-                "coping": plot_yag(trauma, 3, 'Using and incorporating coping strategies', teal, "coping_plot"),
-                "progress": plot_yag(engagement, 0, 'Feeling significant progress', yellow, "progress_plot"),
-                "support": plot_yag(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot"),
+                "schedule": plot_yag(auto, 0, 'Creates daily schedules to meet responsibilites', coral, "schedule_plot"),
+                "guidance": plot_yag(trauma, 2, 'Seeks guidance when facing challenges', teal, "guidance_plot"),
+                "coping": plot_yag(trauma, 3, 'Uses and incorporates coping strategies', teal, "coping_plot"),
+                "progress": plot_yag(engagement, 0, 'Reports feeling significant progress', yellow, "progress_plot"),
+                "support": plot_yag(engagement, 1, 'Reports feeling supported by program and staff', yellow, "support_plot"),
                 "housing": plot_imp(grad, 5, 'Current Housing Situation of Graduates', coral, "housing_plot"),
                 "employment": plot_imp(grad, 6, 'Employment Status of Graduates', teal, "employment_plot"),
                 "doing": plot_imp(grad, 11, 'How Graduates Report to be Doing', yellow, "doing_plot")

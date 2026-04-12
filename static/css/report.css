@@ -95,7 +95,7 @@ body {
     position: absolute;
 
     top: 450px;     
-    left: 545px;   
+    left: 543px;   
 
     width: 160px;
     text-align: center;
@@ -170,7 +170,7 @@ body {
 .stat-finance-2-norm {
     position: absolute;
     top: 700px;
-    left: 80px;
+    left: 85px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -183,7 +183,7 @@ body {
 .stat-finance-2-high {
     position: absolute;
     top: 700px;
-    left: 75px;
+    left: 80px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -249,7 +249,7 @@ body {
 .stat-therapy-1-high {
     position: absolute;
     top: 323px;
-    left: 525px;
+    left: 523px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -262,7 +262,7 @@ body {
 .stat-therapy-2-norm {
     position: absolute;
     top: 700px;
-    left: 80px;
+    left: 85px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -275,7 +275,7 @@ body {
 .stat-therapy-2-high {
     position: absolute;
     top: 700px;
-    left: 75px;
+    left: 80px;
     width: 150px;
 
     font-family: 'League Spartan';
