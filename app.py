@@ -19,7 +19,9 @@ def plot_yag(series, column_index, title, color, filename):
                     .value_counts(normalize=True)
                     .reindex([1, 2, 3, 4, 5], fill_value=0) * 100)
 
-    plt.figure(figsize=(8, 5))
+    sns.set_theme(style='white', font='Century Gothic', rc={'axes.facecolor': 'white'})
+
+    plt.figure(figsize=(8, 6))
     ax = sns.barplot(x=counts.index, y=counts.values, color=color)
     ax.set_xlabel('Score')
     ax.set_title(title)

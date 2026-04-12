@@ -95,7 +95,7 @@ body {
     position: absolute;
 
     top: 450px;     
-    left: 550px;   
+    left: 545px;   
 
     width: 160px;
     text-align: center;
@@ -141,7 +141,7 @@ body {
 
 /* ================= PAGE 7 ================= */
 
-.stat-finance-1 {
+.stat-finance-1-norm {
     position: absolute;
     top: 326px;
     left: 530px;
@@ -154,7 +154,20 @@ body {
     color: #f5b4a4;
 }
 
-.stat-finance-2 {
+.stat-finance-1-high {
+    position: absolute;
+    top: 326px;
+    left: 525px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 52pt;
+    font-weight: 700;
+    text-align: center;
+    color: #f5b4a4;
+}
+
+.stat-finance-2-norm {
     position: absolute;
     top: 700px;
     left: 80px;
@@ -162,6 +175,19 @@ body {
 
     font-family: 'League Spartan';
     font-size: 60pt;
+    font-weight: 700;
+    text-align: center;
+    color: #f5b4a4;
+}
+
+.stat-finance-2-high {
+    position: absolute;
+    top: 700px;
+    left: 75px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 52pt;
     font-weight: 700;
     text-align: center;
     color: #f5b4a4;
@@ -207,10 +233,10 @@ body {
 
 /* ================= PAGE 8 ================= */
 
-.stat-therapy-1 {
+.stat-therapy-1-norm {
     position: absolute;
     top: 323px;
-    left: 510px;
+    left: 530px;
     width: 150px;
 
     font-family: 'League Spartan';
@@ -220,7 +246,20 @@ body {
     color: #cedbdb
 }
 
-.stat-therapy-2 {
+.stat-therapy-1-high {
+    position: absolute;
+    top: 323px;
+    left: 525px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 52pt;
+    font-weight: 700;
+    text-align: center;
+    color: #cedbdb
+}
+
+.stat-therapy-2-norm {
     position: absolute;
     top: 700px;
     left: 80px;
@@ -228,6 +267,19 @@ body {
 
     font-family: 'League Spartan';
     font-size: 60pt;
+    font-weight: 700;
+    text-align: center;
+    color: #cedbdb;
+}
+
+.stat-therapy-2-high {
+    position: absolute;
+    top: 700px;
+    left: 75px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 52pt;
     font-weight: 700;
     text-align: center;
     color: #cedbdb;
@@ -272,7 +324,7 @@ body {
 }
 
 /* ================= PAGE 9 ================= */
-.stat-support {
+.stat-support-norm {
     position: absolute;
     top: 410px;
     left: 105px;
@@ -280,6 +332,19 @@ body {
 
     font-family: 'League Spartan';
     font-size: 60pt;
+    font-weight: 700;
+    text-align: center;
+    color: #fbefab;
+}
+
+.stat-support-high {
+    position: absolute;
+    top: 410px;
+    left: 100px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 52pt;
     font-weight: 700;
     text-align: center;
     color: #fbefab;
