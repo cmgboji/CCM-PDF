@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, send_file
 import pandas as pd
+from matplotlib import font_manager, rcParams
 import matplotlib.pyplot as plt
 import seaborn as sns
 from weasyprint import HTML
@@ -13,13 +14,16 @@ def index():
 
 def plot_yag(series, column_index, title, color, filename):
     os.makedirs("static/plots", exist_ok=True)
+    font_path = os.path.join('static', 'fonts', 'Montserrat-Regular.ttf')
+    font_manager.fontManager.addfont(font_path)
+    rcParams['font.family'] = 'Montserrat'
+    
     counts = (series.iloc[:, column_index]
                     .dropna()
                     .clip(1, 5)
                     .value_counts(normalize=True)
                     .reindex([1, 2, 3, 4, 5], fill_value=0) * 100)
 
-    sns.set_theme(style='white', font='Century Gothic', rc={'axes.facecolor': 'white'})
 
     plt.figure(figsize=(8, 5))
     ax = sns.barplot(x=counts.index, y=counts.values, color=color)
