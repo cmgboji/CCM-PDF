@@ -195,7 +195,7 @@ def run():
         return render_template("error.html",
                                title="Uh oh, something went wrong!",
                                message="There was an error calculating the statistics. Please ensure that the data is structured correctly and try again.",
-                               hint="Hint: Make sure that the columns in your Excel file are structured correctly for the social, autonomy, finance, trauma, and engagement data, and that there is appropriate data for the graduate responses if you are including those statistics.")
+                               hint="Hint: Make sure entered the correct year and that there is appropriate data for the graduate responses if you are including those statistics.")
 
     try:
         grad_data = len(grad) > 0
