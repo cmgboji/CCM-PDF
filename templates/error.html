@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <style>
+    @font-face {
+      font-family: 'League Spartan';
+      src: url('/static/fonts/LeagueSpartan-Regular.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fcebe7;
+      font-family: 'League Spartan', sans-serif;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 40px;
+      max-width: 520px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      color: #f3623d;
+      margin-bottom: 12px;
+      font-size: 28px;
+    }
+
+    p {
+      color: #4f6f6f;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.45;
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .hint {
+      background: #f8f3f1;
+      border-left: 4px solid #76b0af;
+      padding: 12px;
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    a.button {
+      display: inline-block;
+      background: #f3623d;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    a.button:hover {
+      background: #d94f2e;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>{{ title }}</h1>
+
+    <p>{{ message }}</p>
+
+    {% if hint %}
+    <div class="hint">
+      {{ hint }}
+    </div>
+    {% endif %}
+
+    <a class="button" href="/">Return to generator</a>
+  </div>
+</body>
+</html>

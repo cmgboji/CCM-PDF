@@ -80,7 +80,7 @@ def plot_imp(data, column, title, color, filename):
     for bar, pct in zip(ax.patches, counts.values):
         if pct > 0:
             ax.text(
-                bar.get_width() + .2,
+                bar.get_width() + 1,
                 bar.get_y() + bar.get_height() / 2,
                 f'{pct:.0f}%',
                 va='center'
@@ -102,17 +102,20 @@ def run():
         df = pd.read_excel(workbook, sheet_name='Raw Self Assessment', engine='openpyxl')
         grad = pd.read_excel(workbook, sheet_name='Graduate Responses', engine='openpyxl')
     except Exception as e:
-        print("Error reading Excel file:", e)
-        return "There was an error processing the uploaded file. Please ensure it's a valid Excel workbook (.xlsx) with the correct sheet name 'Raw Self Assessment'."
-
+        return render_template("error.html",
+                               title="Uh oh, something went wrong!", 
+                               message="There was an error reading the Excel file. Please ensure the file is properly formatted and try again.",
+                               hint="Hint: Make sure the Excel file contains the sheets 'Raw Self Assessment' and 'Graduate Responses', and that they are formatted correctly.")
     
     try:
         df['Timestamp'] = pd.to_datetime(df['Timestamp'])
         df = df[df['Timestamp'].dt.year == int(year)]
         grad = grad[grad['Follow-Up Period'] == '12 Months']
     except Exception as e:
-        print("Error converting Timestamp:", e)
-        return "There was a time-related error. Please make sure that you entered a valid year and that the 'Timestamp' column in your Excel file is properly formatted as dates."
+        return render_template("error.html",
+                               title="Uh oh, something went wrong!",
+                               message="There was a time-related error. Please make sure that you entered a valid year and that the 'Timestamp' column in your Excel file is properly formatted.",
+                               hint="Hint: Double-check that the 'Timestamp' column in your Excel file contains valid date entries and that the year you entered matches the year of the timestamps in the data.")
 
     
     try:
@@ -126,8 +129,10 @@ def run():
         grad.loc[~grad['What is your current housing situation?'].isin(housing_list), 'What is your current housing situation?'] = 'Other'
 
     except Exception as e:
-        print("Error slicing DataFrame columns:", e)
-        return "There was an error slicing the DataFrame. Please ensure the columns are structured as expected."
+        return render_template("error.html",
+                               title="Uh oh, something went wrong!",
+                               message="There was an error processing the data. Please ensure that the columns in your Excel file are structured correctly and try again.",
+                               hint="Hint: Make sure that the 'Raw Self Assessment' sheet contains the expected columns for social, autonomy, finance, trauma, and engagement data, and that the 'Graduate Responses' sheet contains the expected columns for housing situation, employment status, and how graduates report to be doing.")
     
     teal = '#76b0af'
     coral = '#f3623d'
@@ -160,8 +165,10 @@ def run():
                 "support": plot_yag(engagement, 1, 'Feeling supported by program and staff', yellow, "support_plot"),
              }
     except Exception as e:
-        print("Error generating plots:", e)
-        return "There was an error generating the plots. Please ensure the data is structured correctly and try again."
+        return render_template("error.html",
+                               title="Uh oh, something went wrong!",
+                               message="There was an error generating the plots. Please ensure that the data is structured correctly and try again.",
+                               hint="Hint: Make sure that the columns in your Excel file are structured correctly for the social, autonomy, finance, trauma, and engagement data, and that there is appropriate data for the graduate responses if you are including those plots.")
 
     try:
         if len(grad) > 0:
@@ -185,8 +192,10 @@ def run():
                     }
         
     except Exception as e:
-        print("Error calculating statistics:", e)
-        return "There was an error calculating the statistics. Please ensure the data is structured correctly and try again."
+        return render_template("error.html",
+                               title="Uh oh, something went wrong!",
+                               message="There was an error calculating the statistics. Please ensure that the data is structured correctly and try again.",
+                               hint="Hint: Make sure that the columns in your Excel file are structured correctly for the social, autonomy, finance, trauma, and engagement data, and that there is appropriate data for the graduate responses if you are including those statistics.")
 
     try:
         grad_data = len(grad) > 0
@@ -251,8 +260,10 @@ def run():
         return send_file(pdf_path, as_attachment=True)
     
     except Exception as e:
-        print("Error generating PDF:", e)
-        return "There was an error generating the PDF. Please ensure the template is structured correctly and try again."
+        return render_template("error.html",
+                               title="Uh oh, something went wrong!",
+                               message="There was an error generating the PDF report. Please ensure that the data is structured correctly and that all necessary plots and statistics were generated successfully.",
+                               hint="Hint: This error could be caused by an issue with the HTML template rendering or the PDF generation process. Contact technical support to see if there is an issue with Render, the WeasyPrint library, HTML template, or CSS styles.")
 
 
 if __name__ == "__main__":
