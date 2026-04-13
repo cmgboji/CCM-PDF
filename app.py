@@ -64,7 +64,7 @@ def plot_imp(data, column, title, color, filename):
     font_path = os.path.join('static', 'fonts', 'Montserrat-Regular.ttf')
     font_manager.fontManager.addfont(font_path)
     rcParams['font.family'] = 'Montserrat'
-    
+
     counts = data.iloc[:,column].value_counts(normalize=True) * 100
 
     plt.figure(figsize=(6, 4))
@@ -121,6 +121,10 @@ def run():
         finance = df.iloc[:, 11:16]
         trauma = df.iloc[:, 16:21]
         engagement = df.iloc[:, 21:27]
+
+        housing_list = ['Stable/Permanent housing', 'Temporary housing', 'Staying with friends or family', 'Transitional program']
+        grad.loc[~grad['What is your current housing situation?'].isin(housing_list), 'What is your current housing situation?'] = 'Other'
+
     except Exception as e:
         print("Error slicing DataFrame columns:", e)
         return "There was an error slicing the DataFrame. Please ensure the columns are structured as expected."
