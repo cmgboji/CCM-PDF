@@ -61,6 +61,10 @@ def stats_yag(df, col):
 
 def plot_imp(data, column, title, color, filename):
     os.makedirs("static/plots", exist_ok=True)
+    font_path = os.path.join('static', 'fonts', 'Montserrat-Regular.ttf')
+    font_manager.fontManager.addfont(font_path)
+    rcParams['font.family'] = 'Montserrat'
+    
     counts = data.iloc[:,column].value_counts(normalize=True) * 100
 
     plt.figure(figsize=(6, 4))

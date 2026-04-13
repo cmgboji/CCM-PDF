@@ -146,9 +146,23 @@
     <img class="plot plot-employment" src="{{ employment }}">
     <img class="plot plot-doing" src="{{ doing }}">
 
-    <div class="stat stat-sob">{{ sob }}%</div>
-    <div class="stat stat-sup">{{ sup }}%</div>
-    <div class="stat stat-con">{{ con }}%</div>
+    {% if 100 > sob %}
+    <div class="stat stat-sob-norm">{{ sob }}%</div>
+    {% else %}
+    <div class="stat stat-sob-high">{{ sob }}%</div>
+    {% endif %}
+
+    {% if 100 > sup %}
+    <div class="stat stat-sup-norm">{{ sup }}%</div>
+    {% else %}
+    <div class="stat stat-sup-high">{{ sup }}%</div>
+    {% endif %}
+
+    {% if 100 > con %}
+    <div class="stat stat-con-norm">{{ con }}%</div>
+    {% else %}
+    <div class="stat stat-con-high">{{ con }}%</div>
+    {% endif %}
 
     <div class="caption caption-sob">
         of program graduates report to be maintaining

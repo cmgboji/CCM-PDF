@@ -399,7 +399,7 @@ body {
     width: 400px;
 }
 
-.stat-sob {
+.stat-sob-norm {
     position: absolute;
     top: 215px;
     left: 570px;
@@ -412,7 +412,20 @@ body {
     color: #f0d747;
 }
 
-.stat-sup {
+.stat-sob-high {
+    position: absolute;
+    top: 215px;
+    left: 565px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 40pt;
+    font-weight: 700;
+    text-align: center;
+    color: #f0d747;
+}
+
+.stat-sup-norm {
     position: absolute;
     top: 510px;
     left: 90px;
@@ -425,7 +438,20 @@ body {
     color: #f3623d;
 }
 
-.stat-con {
+.stat-sup-high {
+    position: absolute;
+    top: 510px;
+    left: 85px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 40pt;
+    font-weight: 700;
+    text-align: center;
+    color: #f3623d;
+}
+
+.stat-con-norm {
     position: absolute;
     top: 815px;
     left: 570px;
@@ -433,6 +459,19 @@ body {
 
     font-family: 'League Spartan';
     font-size: 48pt;
+    font-weight: 700;
+    text-align: center;
+    color: #76b0af;
+}
+
+.stat-con-high {
+    position: absolute;
+    top: 815px;
+    left: 565px;
+    width: 150px;
+
+    font-family: 'League Spartan';
+    font-size: 40pt;
     font-weight: 700;
     text-align: center;
     color: #76b0af;
