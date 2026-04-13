@@ -17,7 +17,7 @@ def plot_yag(series, column_index, title, color, filename):
     font_path = os.path.join('static', 'fonts', 'Montserrat-Regular.ttf')
     font_manager.fontManager.addfont(font_path)
     rcParams['font.family'] = 'Montserrat'
-    
+
     counts = (series.iloc[:, column_index]
                     .dropna()
                     .clip(1, 5)
@@ -28,19 +28,21 @@ def plot_yag(series, column_index, title, color, filename):
     plt.figure(figsize=(8, 5))
     ax = sns.barplot(x=counts.index, y=counts.values, color=color)
     ax.set_xlabel('Score')
-    ax.set_title(title)
-    ax.set_ylim(0, 100)
+    ax.set_title(title, pad=14)
+    ax.set_ylim(0, max(100, counts.max() + 8))
     ax.yaxis.set_visible(False)
+    ax.tick_params(bottom=False)
 
     for spine in ['top', 'right', 'left']:
         ax.spines[spine].set_visible(False)
     ax.spines['bottom'].set_visible(True)
 
     for bar, pct in zip(ax.patches, counts.values):
+        label_y = min(pct + 1, ax.get_ylim()[1] - 4)
         if pct > 0:
             ax.text(
                 bar.get_x() + bar.get_width() / 2,
-                pct + 1,
+                label_y,
                 f'{pct:.0f}%',
                 ha='center',
                 va='bottom'
@@ -69,6 +71,7 @@ def plot_imp(data, column, title, color, filename):
     plt.xticks(rotation=45)
     plt.box(False)
     ax.xaxis.set_visible(False)
+    ax.tick_params(left=False)
 
     for bar, pct in zip(ax.patches, counts.values):
         if pct > 0:
