@@ -5,7 +5,9 @@ This repository contains the code used for the Magdalene Houses' impact report g
 **Requirements.txt:** Lists the required packages and tools for Render to work. If you are to import any package that is not already in the app.py script, you **MUST** add it to this text file for it to work.
 
 **Index.html:** HTML for the website itself.
+
 **Report_template.html:** HTML for the report. Uses plot and statistic variables created in the app.py script along with the JPGs in the Backgrounds folder.
+
 **Error.html:** Simple HTML file in the event of an error occurring. Provides hints to what might be the cause of the problem.
 
 **Report.css:** Handles the positioning of each variable, along with the fonts and colors of the captions used in the Report_template.html file.
