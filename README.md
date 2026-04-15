@@ -11,3 +11,8 @@ This repository contains the code used for the Magdalene Houses' impact report g
 **Error.html:** Simple HTML file in the event of an error occurring. Provides hints to what might be the cause of the problem.
 
 **Report.css:** Handles the positioning of each variable, along with the fonts and colors of the captions used in the Report_template.html file.
+
+
+*Important Notes:*
+- If you decide to alter the dataframe when making changes to the report, be very careful, as the plots are created using specific column indices. Make sure you are using the correct column number if you decide to replace a plot or statistic. **Keep this in mind when adding/deleting questions to the Dashboard Spreadsheet as well!**
+- Please, please do not create a new Render website with this code! Request collaborator access if you need to make edits, and contact me if you experience any deployment issues.
