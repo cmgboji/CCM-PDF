@@ -6,13 +6,13 @@ body {
 }
 
 @page {
-    size: letter;    /* 8.5in x 11in */
+    size: letter; 
     margin: 0;
 }
 
 .page {
     position: relative;
-    width: 816px;     /* 8.5 x 11 at 96 dpi */
+    width: 816px;   
     height: 1056px;
     page-break-after: always;
 }
@@ -73,7 +73,6 @@ body {
 
 /* ================= PAGE 6 ================= */
 
-/* Big % over dark yellow circle */
 .stat-social-norm {
     position: absolute;
 
@@ -108,7 +107,6 @@ body {
     z-index: 10;
 }
 
-/* Caption inside light yellow block */
 .caption-social {
     position: absolute;
 

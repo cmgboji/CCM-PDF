@@ -12,6 +12,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+# Creates bar plot for YAG questions, saves to static/plots, and returns path to saved plot
 def plot_yag(series, column_index, title, color, filename):
     os.makedirs("static/plots", exist_ok=True)
     font_path = os.path.join('static', 'fonts', 'Montserrat-Regular.ttf')
@@ -56,9 +57,11 @@ def plot_yag(series, column_index, title, color, filename):
 
     return save_path
 
+# Calculates percentage of respondents who scored 4 or 5 on a given YAG question
 def stats_yag(df, col):
     return int(round(df.iloc[:,col][df.iloc[:,col] > 3].count()/df.iloc[:,col].dropna().count(), 2) * 100)
 
+# Graduate response plot function - similar to plot_yag but for categorical data
 def plot_imp(data, column, title, color, filename):
     os.makedirs("static/plots", exist_ok=True)
     font_path = os.path.join('static', 'fonts', 'Montserrat-Regular.ttf')
@@ -91,6 +94,7 @@ def plot_imp(data, column, title, color, filename):
     plt.close()
     return save_path
 
+# Calculates percentage of those who selected "Yes" for graduate response questions
 def stats_imp(df, col):
     return int(round(((df.iloc[:,col][df.iloc[:,col] == "Yes"].count() / len(df)) * 100), 2))
 
@@ -108,6 +112,7 @@ def run():
                                hint="Hint: Make sure the Excel file contains the sheets 'Raw Self Assessment' and 'Graduate Responses', and that they are formatted correctly.")
     
     try:
+        # Filter data for the specified year based on 'Timestamp' column and 'Follow-Up Period' in graduate responses
         df['Timestamp'] = pd.to_datetime(df['Timestamp'])
         df = df[df['Timestamp'].dt.year == int(year)]
         grad = grad[grad['Follow-Up Period'] == '12 Months']
@@ -119,12 +124,14 @@ def run():
 
     
     try:
+        # Split YAG data into separate DataFrames for each category of questions
         social = df.iloc[:, 4:8]
         auto = df.iloc[:, 8:11]
         finance = df.iloc[:, 11:16]
         trauma = df.iloc[:, 16:21]
         engagement = df.iloc[:, 21:27]
 
+        # Groups the 'Other' responses for graduate housing situations
         housing_list = ['Stable/Permanent housing', 'Temporary housing', 'Staying with friends or family', 'Transitional program']
         grad.loc[~grad['What is your current housing situation?'].isin(housing_list), 'What is your current housing situation?'] = 'Other'
 
@@ -139,6 +146,7 @@ def run():
     yellow = '#f0d747'
 
     try:
+        # Plot paths - only include graduate response plots if there is graduate data from 12 month follow up
         if len(grad) > 0:
             plot_paths = {
                 "connected": plot_yag(social, 0, 'Feeling connected to others', yellow, "connected_plot"),
@@ -171,6 +179,7 @@ def run():
                                hint="Hint: Make sure that the columns in your Excel file are structured correctly for the social, autonomy, finance, trauma, and engagement data, and that there is appropriate data for the graduate responses if you are including those plots.")
 
     try:
+        # Stores the statistics
         if len(grad) > 0:
             stats = {'s1': stats_yag(social, 1), 
                     'f1': stats_yag(finance, 0), 
@@ -198,7 +207,8 @@ def run():
                                hint="Hint: Make sure entered the correct year and that there is appropriate data for the graduate responses if you are including those statistics.")
 
     try:
-        grad_data = len(grad) > 0
+        grad_data = len(grad) > 0 # Flag to indicate whether there is graduate data to include in the report
+        # Renders the HTML template with the stats and plot paths
         if grad_data:
             html = render_template(
                 "report_template.html",
@@ -257,7 +267,7 @@ def run():
             stylesheets=None,
             presentational_hints=True
         )
-        return send_file(pdf_path, as_attachment=True)
+        return send_file(pdf_path, as_attachment=True) # Sends the generated PDF file as a download to the user
     
     except Exception as e:
         return render_template("error.html",
